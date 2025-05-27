@@ -1,15 +1,47 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const trap = localFont({
+  src: [
+    {
+      path: '../../public/font/trap/Trap-Light.woff2',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../../public/font/trap/Trap-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/font/trap/Trap-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/font/trap/Trap-SemiBold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../public/font/trap/Trap-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../../public/font/trap/Trap-ExtraBold.woff2',
+      weight: '800',
+      style: 'normal',
+    },
+    {
+      path: '../../public/font/trap/Trap-Black.woff2',
+      weight: '900',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-trap',
 });
 
 export const metadata: Metadata = {
@@ -25,9 +57,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${trap.variable} font-sans antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
