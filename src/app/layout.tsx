@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import localFont from "next/font/local";
+import SmoothScrolling from "@/components/smooth-scrolling";
 
 const trap = localFont({
   src: [
@@ -61,11 +62,15 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <main className="w-full h-screen select-none">
+            <SmoothScrolling>
+              {children}
+            </SmoothScrolling>
+          </main>
         </ThemeProvider>
       </body>
     </html>
