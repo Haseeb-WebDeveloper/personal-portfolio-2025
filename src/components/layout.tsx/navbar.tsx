@@ -11,13 +11,13 @@ function Navbar() {
                 {/* Logo */}
                 <div className='flex items-center gap-[1vw]'>
                     <Image
-                        src="/haseeb-logo.webp"
+                        src="/haseeb-ahmed-raza-khan.webp"
                         alt="Haseeb Ahmed web developer Logo"
                         width={600}
                         height={600}
                         priority
                         quality={100}
-                        className='rounded-full object-cover object-top h-[3.8vw] w-[3.8vw]'
+                        className='rounded-full object-cover object-top h-[3.8vw] w-[3.8vw] cursor-pointer'
                     />
                     <div className='flex flex-col gap-[0.3vw]'>
                         <h1 className='text-[1.4vw] font-medium'>Haseeb Ahmed Raza Khan</h1>
