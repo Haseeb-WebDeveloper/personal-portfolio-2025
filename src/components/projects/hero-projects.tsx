@@ -12,7 +12,7 @@ import GSAPCardsAnimation from "../layout.tsx/cards";
 export default function HeroProjects() {
     return (
         <>
-            <section className="w-full h-full mt-[30vw] md:mt-[15vw]">
+            <section className="w-full h-full mt-[30vw] md:mt-[15vw] mb-[10vw]">
                 {/* Projects section heading */}
                 <div className="w-full h-full  mb-[8vw]">
                     <ScrollVelocity
@@ -22,7 +22,7 @@ export default function HeroProjects() {
                     />
                 </div>
 
-                <div className="section w-full h-full space-y-[12vw]">
+                <div className="section w-full h-full md:space-y-[11vw]">
                     {heroProjects.map((project: IHeroProjects, index: number) => (
                         <div key={index} className="w-full flex flex-col gap-[2vw]">
                             {/* Top Row */}
@@ -57,9 +57,11 @@ export default function HeroProjects() {
                                 <div className="relative">
                                     <ProjectImageCarousel images={project.projectImages} title={project.title} category={project.category || ""} />
                                 </div>
-                                <div className={`w-full h-full `}
-                                    style={{ backgroundColor: project.testimonialColor }}
+                                <div className={`relative w-full h-full `}
+                                    // style={{ backgroundColor: project.testimonialColor }}
                                 >
+                                    {/* test background image */}
+                                    <Image src="/test-bg.png" alt={project.title} width={1000} height={1000} className="w-full h-full object-cover absolute top-0 left-0" />
                                     {project.testimonial.map((testimonial: any, index: number) => (
                                         <div key={index} className="w-full h-full p-[3vw] flex justify-center items-center">
                                             <div className="p-[2.5vw] rounded-tl-[2vw] bg-background/90 border-[0.1vw] border-border space-y-[2vw] backdrop-blur-sm">
@@ -106,16 +108,12 @@ export default function HeroProjects() {
                     ))}
                 </div>
 
-                <div className="w-full h-full flex justify-center items-center mt-[10vw]">
+                <div className="w-full h-full flex justify-center items-center mt-[8vw]">
                     <Link href="/projects" className="flex border-b-2 border-foreground items-center gap-[1.2vw]">
                         <Image src="/icon/corner-down-right.svg" alt="corner-down-right" width={100} height={100} className="w-[5vw] h-[5vw] object-cover" />
                         <p className="text-[3.5vw] font-semibold tracking-normal uppercase">View All Projects</p>
                     </Link>
                 </div>
-                {/* test */}
-                {/* <div className="w-full h-[10vw]">
-                </div>
-                <GSAPCardsAnimation /> */}
             </section>
         </>
     )
