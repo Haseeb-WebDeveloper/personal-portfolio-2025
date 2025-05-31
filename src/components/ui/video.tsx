@@ -274,7 +274,7 @@ export default function HomeVideo() {
     return (
         <div
             ref={containerRef}
-            className="absolute opacity-0 z-[20] top-[55vh] md:top-[30vw] left-1/2 -translate-x-1/2 w-full h-fit md:max-w-[70vw] max-w-[90vw] md:cursor-none cursor-pointer group overflow-hidden"
+            className="absolute opacity-0 z-[20] top-[55vh] md:top-[34vw] left-1/2 -translate-x-1/2 w-full h-fit md:max-w-[70vw] max-w-[90vw] md:cursor-none cursor-pointer group overflow-hidden"
             id="video-container"
             onMouseEnter={handleContainerMouseEnter}
             onMouseLeave={handleContainerMouseLeave}

@@ -31,9 +31,9 @@ function Navbar() {
                 {/* CTA Button */}
                 <Link
                     href="mailto:web.dev.haseeb@gmail.com"
-                    className="relative flex items-center text-[1.11vw] font-medium h-[3.56vw] px-[1.8vw] border border-foreground/20 rounded-full leading-none"
+                    className="relative flex items-center text-[1.11vw] font-medium h-[3.56vw] px-[1vw] border border-foreground/20 rounded-full leading-none"
                 >
-                    Let's Talk
+                    Want Digital Solution?
                 </Link>
 
             </nav>

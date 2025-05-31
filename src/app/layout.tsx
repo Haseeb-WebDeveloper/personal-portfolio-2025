@@ -2,7 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import localFont from "next/font/local";
+import { DM_Sans } from "next/font/google";
 import SmoothScrolling from "@/components/smooth-scrolling";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-dm-sans",
+});
 
 const trap = localFont({
   src: [
@@ -58,7 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${trap.variable} font-sans antialiased`}
+        className={`${trap.variable} ${dmSans.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"

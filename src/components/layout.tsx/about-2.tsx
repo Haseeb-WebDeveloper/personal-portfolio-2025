@@ -85,15 +85,15 @@ export default function About2() {
                 <span className="w-[9vw] h-[2.8vw] px-[1vw] inline-flex items-center justify-center align-middle">
                     <Image src="/digital.avif" alt="profile" width={200} height={200} className="rounded-[2vw] object-cover object-center w-full h-full" />
                 </span>
-                digital leverage. I've helped startups, agencies, and business leaders turn ideas into high-converting
+                digital leverage. I've helped startups, agencies, and business leaders turn ideas into high converting
                 <span className="w-[9vw] h-[2.8vw] px-[1vw] inline-flex items-center justify-center align-middle">
                     <Image src="/grow.avif" alt="profile" width={200} height={200} className="rounded-[2vw] object-cover object-center w-full h-full" />
                 </span>
-                platforms with clean code, seamless
+                platforms with scalable code, seamless
                 <span className="w-[9vw] h-[2.8vw] px-[1vw] inline-flex items-center justify-center align-middle">
                     <Image src="/ui.avif" alt="profile" width={200} height={200} className="rounded-[2vw] object-cover object-center w-full h-full" />
                 </span>
-                UX, and performance-driven design.
+                UX, and performance driven design.
             </h3>
             <div className="w-full flex justify-end">
                 {/* Placeholder div to maintain layout */}
