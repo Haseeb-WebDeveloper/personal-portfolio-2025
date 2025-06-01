@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import localFont from "next/font/local";
 import { DM_Sans } from "next/font/google";
 import SmoothScrolling from "@/components/smooth-scrolling";
+import { Footer } from "@/components/ui/footer";
+import Navbar from "@/components/layout.tsx/navbar";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -75,7 +77,9 @@ export default function RootLayout({
         >
           <main className="w-full h-screen select-none">
             <SmoothScrolling>
+            <Navbar />
               {children}
+              <Footer />
             </SmoothScrolling>
           </main>
         </ThemeProvider>

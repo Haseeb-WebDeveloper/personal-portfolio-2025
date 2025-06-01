@@ -8,11 +8,10 @@ import React, {
 } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 
-
 interface StepperProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   initialStep?: number;
-  onStepChange?: (step: number) => void;
+  onStepChange?: (step: number) => boolean; // Changed to return boolean for validation
   onFinalStepCompleted?: () => void;
   stepCircleContainerClassName?: string;
   stepContainerClassName?: string;
@@ -24,6 +23,7 @@ interface StepperProps extends HTMLAttributes<HTMLDivElement> {
   nextButtonText?: string;
   disableStepIndicators?: boolean;
   renderStepIndicator?: (props: RenderStepIndicatorProps) => ReactNode;
+  canSubmit?: boolean; // New prop to control submit button
 }
 
 interface RenderStepIndicatorProps {
@@ -35,7 +35,7 @@ interface RenderStepIndicatorProps {
 export default function Stepper({
   children,
   initialStep = 1,
-  onStepChange = () => {},
+  onStepChange = () => true,
   onFinalStepCompleted = () => {},
   stepCircleContainerClassName = "",
   stepContainerClassName = "",
@@ -47,6 +47,7 @@ export default function Stepper({
   nextButtonText = "Continue",
   disableStepIndicators = false,
   renderStepIndicator,
+  canSubmit = true,
   ...rest
 }: StepperProps) {
   const [currentStep, setCurrentStep] = useState<number>(initialStep);
@@ -57,31 +58,52 @@ export default function Stepper({
   const isLastStep = currentStep === totalSteps;
 
   const updateStep = (newStep: number) => {
-    setCurrentStep(newStep);
     if (newStep > totalSteps) {
       onFinalStepCompleted();
     } else {
-      onStepChange(newStep);
+      // Only proceed if validation passes
+      const canProceed = onStepChange(newStep);
+      if (canProceed) {
+        setCurrentStep(newStep);
+      }
     }
   };
 
   const handleBack = () => {
     if (currentStep > 1) {
-      setDirection(1); // Changed from -1 to 1
-      updateStep(currentStep - 1);
+      setDirection(1);
+      setCurrentStep(currentStep - 1);
+      onStepChange(currentStep - 1);
     }
   };
 
   const handleNext = () => {
     if (!isLastStep) {
-      setDirection(-1); // Changed from 1 to -1
-      updateStep(currentStep + 1);
+      // Validate before moving to next step
+      const canProceed = onStepChange(currentStep + 1);
+      if (canProceed) {
+        setDirection(-1);
+        setCurrentStep(currentStep + 1);
+      }
     }
   };
 
   const handleComplete = () => {
-    setDirection(-1); // Changed from 1 to -1
-    updateStep(totalSteps + 1);
+    // Only allow completion if canSubmit is true
+    if (canSubmit) {
+      setDirection(-1);
+      updateStep(totalSteps + 1);
+    }
+  };
+
+  const handleStepClick = (clickedStep: number) => {
+    if (clickedStep !== currentStep && !disableStepIndicators) {
+      const canProceed = onStepChange(clickedStep);
+      if (canProceed) {
+        setDirection(clickedStep < currentStep ? 1 : -1);
+        setCurrentStep(clickedStep);
+      }
+    }
   };
 
   return (
@@ -100,20 +122,14 @@ export default function Stepper({
                   renderStepIndicator({
                     step: stepNumber,
                     currentStep,
-                    onStepClick: (clicked) => {
-                      setDirection(clicked < currentStep ? 1 : -1); // Reversed the condition
-                      updateStep(clicked);
-                    },
+                    onStepClick: handleStepClick,
                   })
                 ) : (
                   <StepIndicator
                     step={stepNumber}
                     disableStepIndicators={disableStepIndicators}
                     currentStep={currentStep}
-                    onClickStep={(clicked) => {
-                      setDirection(clicked < currentStep ? 1 : -1); // Reversed the condition
-                      updateStep(clicked);
-                    }}
+                    onClickStep={handleStepClick}
                   />
                 )}
                 {isNotLastStep && (
@@ -147,10 +163,13 @@ export default function Stepper({
               )}
               <button
                 onClick={isLastStep ? handleComplete : handleNext}
-                className="next-button"
+                className={`next-button ${
+                  (isLastStep && !canSubmit) || nextButtonProps?.disabled ? "disabled" : ""
+                }`}
+                disabled={nextButtonProps?.disabled || (isLastStep && !canSubmit)}
                 {...nextButtonProps}
               >
-                {isLastStep ? "Complete" : nextButtonText}
+                {isLastStep ? "Submit" : nextButtonText}
               </button>
             </div>
           </div>
@@ -228,7 +247,7 @@ function SlideTransition({ children, direction, onHeightReady }: SlideTransition
 
 const stepVariants: Variants = {
   enter: (dir: number) => ({
-    x: dir >= 0 ? "-100%" : "100%", // Reversed: positive direction now comes from right, negative from left
+    x: dir >= 0 ? "-100%" : "100%",
     opacity: 0,
   }),
   center: {
@@ -236,7 +255,7 @@ const stepVariants: Variants = {
     opacity: 1,
   },
   exit: (dir: number) => ({
-    x: dir >= 0 ? "50%" : "-50%", // Reversed: positive direction now exits to left, negative to right
+    x: dir >= 0 ? "50%" : "-50%",
     opacity: 0,
   }),
 };
@@ -281,8 +300,8 @@ function StepIndicator({
       <motion.div
         variants={{
           inactive: { scale: 1, backgroundColor: "#222", color: "#a3a3a3" },
-          active: { scale: 1, backgroundColor: "#00d8ff", color: "#00d8ff" },
-          complete: { scale: 1, backgroundColor: "#00d8ff", color: "#3b82f6" },
+          active: { scale: 1, backgroundColor: "#9AE647", color: "#a3a3a3" },
+          complete: { scale: 1, backgroundColor: "#99e6477b", color: "#a3a3a3" },
         }}
         transition={{ duration: 0.3 }}
         className="step-indicator-inner"
@@ -306,7 +325,7 @@ interface StepConnectorProps {
 function StepConnector({ isComplete }: StepConnectorProps) {
   const lineVariants: Variants = {
     incomplete: { width: 0, backgroundColor: "transparent" },
-    complete: { width: "100%", backgroundColor: "#00d8ff" },
+    complete: { width: "100%", backgroundColor: "#9AE647" },
   };
 
   return (

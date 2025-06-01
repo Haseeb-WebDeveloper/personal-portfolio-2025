@@ -32,7 +32,6 @@ export default function HeroProjects() {
                                         <div className="space-y-[0.8vw]">
                                             <div className="flex gap-[1vw] items-center">
                                                 <h3 className="uppercase  text-[9vw] lg:text-[2.5vw] font-bold tracking-normal leading-none dm-sans">{project.title}</h3>
-                                                {/* <Image src={project.logo} alt={project.title} width={500} height={500} className="h-[6vw] md:h-[5vw] lg:h-[4.2vw] w-fit rounded-full object-contain" /> */}
                                             </div>
                                             <p className="text-foreground text-[4.5vw] lg:text-[1.5vw] tracking-normal leading-[120%] dm-sans font-light">{project.description}</p>
                                         </div>
@@ -58,10 +57,10 @@ export default function HeroProjects() {
                                     <ProjectImageCarousel images={project.projectImages} title={project.title} category={project.category || ""} />
                                 </div>
                                 <div className={`relative w-full h-full `}
-                                    // style={{ backgroundColor: project.testimonialColor }}
+                                style={{ backgroundColor: project.testimonialColor }}
                                 >
                                     {/* test background image */}
-                                    <Image src="/test-bg.png" alt={project.title} width={1000} height={1000} className="w-full h-full object-cover absolute top-0 left-0" />
+                                    {/* <Image src="/test-bg.png" alt={project.title} width={1000} height={1000} className="w-full h-full object-cover absolute top-0 left-0" /> */}
                                     {project.testimonial.map((testimonial: any, index: number) => (
                                         <div key={index} className="w-full h-full p-[3vw] flex justify-center items-center">
                                             <div className="p-[2.5vw] rounded-tl-[2vw] bg-background/90 border-[0.1vw] border-border space-y-[2vw] backdrop-blur-sm">
@@ -142,7 +141,7 @@ function ProjectImageCarousel({ images, title, category }: { images: { url: stri
             {/* URL */}
             <div className="absolute top-[0.5vw] left-[0.5vw] flex items-center gap-[0.5vw]">
                 {category && <p className=" px-[1vw] py-[0.5vw] border border-foreground/40 rounded-full bg-background/50 backdrop-blur-sm">{category}</p>}
-                <Link href={images[currentIndex].url} target="_blank" rel="noopener noreferrer" className=" px-[1vw] py-[0.5vw] border border-foreground/40 rounded-full bg-background/50 backdrop-blur-sm text-[1vw] font-medium tracking-normal">{images[currentIndex].url}</Link>
+                <div className=" px-[1vw] py-[0.5vw] border border-foreground/40 rounded-full bg-background/50 backdrop-blur-sm text-[1vw] font-medium tracking-normal">{images[currentIndex].url}</div>
             </div>
             {/* Progress Indicators */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">

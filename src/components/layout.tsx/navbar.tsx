@@ -1,8 +1,15 @@
 "use client"
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react'
+import Form from '../ui/form'
 
 function Navbar() {
+    const [isFormOpen, setIsFormOpen] = useState(false)
+
+    const handleFormOpen = () => {
+        setIsFormOpen(!isFormOpen)
+    }
 
     return (
         <header className='section w-full'>
@@ -29,14 +36,25 @@ function Navbar() {
                 </div>
 
                 {/* CTA Button */}
-                <Link
-                    href="mailto:web.dev.haseeb@gmail.com"
-                    className="relative flex items-center text-[1.11vw] font-medium h-[3.56vw] px-[1vw] border border-foreground/20 rounded-full leading-none"
-                >
-                    Want Digital Solution?
-                </Link>
+                <div className='flex items-center gap-[0.5vw]'>
+                    <Link
+                        href="/projects"
+                        className="cursor-pointer relative flex items-center text-[1.11vw] font-medium h-[3.56vw] px-[1vw] border border-foreground/20 rounded-full leading-none"
+                    >
+                        Projects
+                    </Link>
+                    <button
+                        onClick={handleFormOpen}
+                        className="cursor-pointer relative flex items-center text-[1.11vw] font-medium h-[3.56vw] px-[1vw] border border-foreground/20 rounded-full leading-none"
+                    >
+                        Want Website?
+                    </button>
+                </div>
 
             </nav>
+            {isFormOpen && (
+                <Form handleFormOpen={handleFormOpen} />
+            )}
         </header>
     )
 }
