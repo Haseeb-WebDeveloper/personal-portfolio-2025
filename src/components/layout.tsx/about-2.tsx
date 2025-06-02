@@ -83,15 +83,15 @@ export default function About2() {
                 </span>
                 Haseeb Ahmed Raza Khan, a full stack developer who doesn't just build websites, but builds
                 <span className="w-[22vw] h-[7vw] lg:w-[9vw] lg:h-[2.8vw] px-[3vw] lg:px-[1vw] inline-flex items-center justify-center align-middle">
-                    <Image src="/digital.avif" alt="profile" width={200} height={200} className="rounded-[3vw] lg:rounded-[2vw] object-cover object-center w-full h-full" />
+                    <Image src="/digital.avif" alt="digital" width={200} height={200} className="rounded-[3vw] lg:rounded-[2vw] object-cover object-center w-full h-full" />
                 </span>
                 digital leverage. I've helped startups, agencies, and business leaders turn ideas into high converting
                 <span className="w-[22vw] h-[7vw] lg:w-[9vw] lg:h-[2.8vw] px-[3vw] lg:px-[1vw] inline-flex items-center justify-center align-middle">
-                    <Image src="/grow.avif" alt="profile" width={200} height={200} className="rounded-[3vw] lg:rounded-[2vw] object-cover object-center w-full h-full" />
+                    <Image src="/grow.avif" alt="grow" width={200} height={200} className="rounded-[3vw] lg:rounded-[2vw] object-cover object-center w-full h-full" />
                 </span>
                 platforms with scalable code, seamless
                 <span className="w-[22vw] h-[7vw] lg:w-[9vw] lg:h-[2.8vw] px-[3vw] lg:px-[1vw] inline-flex items-center justify-center align-middle">
-                    <Image src="/ui.avif" alt="profile" width={200} height={200} className="rounded-[3vw] lg:rounded-[2vw] object-cover object-center w-full h-full" />
+                    <Image src="/ui.avif" alt="ui" width={200} height={200} className="rounded-[3vw] lg:rounded-[2vw] object-cover object-center w-full h-full" />
                 </span>
                 UX, and performance driven design.
             </h3>
@@ -126,6 +126,8 @@ export default function About2() {
                         alt="profile"
                         width={1000}
                         height={700}
+                        placeholder="blur"
+                        blurDataURL="/haseeb-on-google.png"
                         onClick={isExpanded ? handleImageClickWhenExpanded : undefined}
                         className={`select-none transition-all duration-700 ease-out ${isExpanded
                                 ? 'max-w-[90vw] max-h-[90vh] object-contain cursor-pointer animate-expand-from-origin'

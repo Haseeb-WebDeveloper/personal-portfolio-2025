@@ -34,7 +34,7 @@ export default function HeroProjects() {
                                             <div className="flex gap-[1vw] items-center">
                                                 <h3 className="uppercase text-[8vw] lg:text-[2.5vw] font-medium md:font-bold tracking-norma leading-none">{project.title}</h3>
                                             </div>
-                                            <p className="text-foreground text-[5.5vw] lg:text-[1.5vw] lg:tracking-normal leading-[140%] lg:leading-[120%] font-light">{project.description}</p>
+                                            <p className="text-foreground text-[5.8vw] lg:text-[1.8vw] lg:tracking-normal leading-[140%]  ">{project.description}</p>
                                         </div>
                                     </div>
                                     <div className="max-w-[90%] flex flex-wrap md:gap-[0.5vw] gap-[2.5vw]">
@@ -46,7 +46,7 @@ export default function HeroProjects() {
                                 <div className="flex flex-col justify-end gap-[3vw]">
                                     <div className="max-w-[90%] space-y-[1vw]">
                                         {project.moreInfo.map((info: string, index: number) => (
-                                            <p key={index} className="text-foreground text-[5.5vw] lg:text-[1.5vw] lg:tracking-normal leading-[140%] lg:leading-[120%] font-light" dangerouslySetInnerHTML={{ __html: info }} />
+                                            <p key={index} className="text-foreground text-[5.8vw] lg:text-[1.8vw] lg:tracking-normal leading-[140%]  " dangerouslySetInnerHTML={{ __html: info }} />
                                         ))}
                                     </div>
                                 </div>

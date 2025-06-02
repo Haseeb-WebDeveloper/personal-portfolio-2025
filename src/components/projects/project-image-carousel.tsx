@@ -23,6 +23,9 @@ export default function ProjectImageCarousel({ images, title, category }: { imag
                 className="w-full h-full object-cover"
                 width={1000}
                 height={1000}
+                placeholder="blur"
+                blurDataURL={images[currentIndex].image}
+                quality={100}
             />
             {/* URL */}
             <div className="absolute lg:top-[0.5vw] lg:left-[0.5vw] top-[2vw] left-[2vw] flex items-center lg:gap-[0.5vw] gap-[2vw]">

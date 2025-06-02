@@ -10,8 +10,8 @@ export default function HomeVideo() {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isMuted, setIsMuted] = useState(false);
     const [showControls, setShowControls] = useState(false);
-    const [currentTime, setCurrentTime] = useState(0);
-    const [duration, setDuration] = useState(0);
+    // const [currentTime, setCurrentTime] = useState(0);
+    // const [duration, setDuration] = useState(0);
     const [isControlsHovered, setIsControlsHovered] = useState(false);
     const [isLargeScreen, setIsLargeScreen] = useState(false);
 
@@ -28,7 +28,8 @@ export default function HomeVideo() {
         gsap.registerPlugin(ScrollTrigger);
 
         // Check if we're on a large screen before applying scroll animation
-        setIsLargeScreen(window.innerWidth >= 768);
+        const isLargeScreen = window.innerWidth >= 768; // md breakpoint
+        setIsLargeScreen(isLargeScreen);
 
         if (isLargeScreen) {
             // Video container only for large screens
@@ -81,7 +82,7 @@ export default function HomeVideo() {
             gsap.set(cursor, {
                 x: centerX,
                 y: centerY + `${isLargeScreen ? 50 : 20}`,
-                scale: cursorSize
+                // scale: cursorSize
             });
 
             // Only add mouse tracking on large screens
@@ -133,28 +134,28 @@ export default function HomeVideo() {
     }, [isControlsHovered]);
 
     // Set up video time update listener
-    useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
+    // useEffect(() => {
+    //     const video = videoRef.current;
+    //     if (!video) return;
 
-        const handleTimeUpdate = () => {
-            setCurrentTime(video.currentTime);
-        };
+    //     const handleTimeUpdate = () => {
+    //         setCurrentTime(video.currentTime);
+    //     };
 
-        const handleMetadata = () => {
-            if (video.duration) {
-                setDuration(video.duration);
-            }
-        };
+    //     const handleMetadata = () => {
+    //         if (video.duration) {
+    //             setDuration(video.duration);
+    //         }
+    //     };
 
-        video.addEventListener('timeupdate', handleTimeUpdate);
-        video.addEventListener('loadedmetadata', handleMetadata);
+    //     video.addEventListener('timeupdate', handleTimeUpdate);
+    //     video.addEventListener('loadedmetadata', handleMetadata);
 
-        return () => {
-            video.removeEventListener('timeupdate', handleTimeUpdate);
-            video.removeEventListener('loadedmetadata', handleMetadata);
-        };
-    }, []);
+    //     return () => {
+    //         video.removeEventListener('timeupdate', handleTimeUpdate);
+    //         video.removeEventListener('loadedmetadata', handleMetadata);
+    //     };
+    // }, []);
 
     // Unified controls visibility management
     const showControlsWithTimeout = () => {
@@ -195,7 +196,7 @@ export default function HomeVideo() {
                 const baseScale = window.innerWidth >= 768 ? 1 : 0.8;
 
                 gsap.to(cursorRef.current, {
-                    scale: isPlaying ? baseScale : baseScale * 0.8,
+                    scale: isPlaying ? baseScale : baseScale,
                     duration: 0.3,
                     ease: "power2.out"
                 });
@@ -292,9 +293,9 @@ export default function HomeVideo() {
                     }}
                 >
                     {isPlaying ? (
-                        <Image src="/icon/stop-icon.svg" alt="stop" width={100} height={100} className="w-[12vw] h-[12vw] md:w-[7vw] md:h-[7vw]" />
+                        <Image src="/icon/stop-icon.svg" alt="stop" width={100} height={100} className=" w-[12vw] h-[12vw] md:w-[7vw] md:h-[7vw]" />
                     ) : (
-                        <Image src="/icon/play-video-icon.svg" alt="play" width={100} height={100} className="w-[12vw] h-[12vw] md:w-[7vw] md:h-[7vw]" />
+                        <Image src="/icon/play-video-icon.svg" alt="play" width={100} height={100} className=" w-[12vw] h-[12vw] md:w-[7vw] md:h-[7vw]" />
                     )}
                 </div>
             </div>
@@ -320,12 +321,12 @@ export default function HomeVideo() {
                     pointerEvents: showControls ? 'auto' : 'none' // Only allow interaction when visible
                 }}
             >
-                <div className="flex items-center justify-between p-[0.5vw]">
+                <div className="flex items-center justify-between px-[0.5vw]">
                     <div className="flex items-center md:gap-[1vw] gap-[2vw]">
                         {/* Time display */}
-                        <span className="text-[3vw]  md:text-[2vw] lg:text-[1.2vw]">
+                        {/* <span className="md:text-[1.2vw] text-[3vw]">
                             {formatTime(currentTime)} / {formatTime(duration)}
-                        </span>
+                        </span> */}
 
                         {/* Mute/Unmute button */}
                         <button
@@ -333,9 +334,9 @@ export default function HomeVideo() {
                             className="cursor-pointer"
                         >
                             {isMuted ? (
-                                <VolumeX className="w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[3vw] lg:h-[3vw]" />
+                                <VolumeX className="md:w-[2vw] md:h-[2vw] w-[5vw] h-[5vw]" />
                             ) : (
-                                <Volume2 className="w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[3vw] lg:h-[3vw]" />
+                                <Volume2 className="md:w-[2vw] md:h-[2vw] w-[5vw] h-[5vw]" />
                             )}
                         </button>
                     </div>
@@ -345,7 +346,7 @@ export default function HomeVideo() {
                         onClick={handleFullscreen}
                         className="cursor-pointer"
                     >
-                        <Maximize className="w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[3vw] lg:h-[3vw]" />
+                        <Maximize className="md:w-[2vw] md:h-[2vw] w-[5vw] h-[5vw]" />
                     </button>
                 </div>
             </div>

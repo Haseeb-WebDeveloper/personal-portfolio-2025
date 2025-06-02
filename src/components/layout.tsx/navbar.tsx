@@ -24,6 +24,8 @@ function Navbar() {
                         height={600}
                         priority
                         quality={100}
+                        placeholder="blur"
+                        blurDataURL="/haseeb-ahmed-raza-khan.webp"
                         className='rounded-full object-cover object-top h-[6.5vw] md:h-[5vw] lg:h-[3.8vw] w-[6.5vw] md:w-[5vw] lg:w-[3.8vw] cursor-pointer'
                     />
                     <div className='flex flex-col gap-[0.3vw]'>
