@@ -75,29 +75,29 @@ export default function About2() {
                     animation: expand-from-origin 0.7s ease-out forwards;
                 }
             `}</style>
-            
-            <h3 className="font-bold text-[4vw] md:text-[4vw] lg:text-[2.7vw] tracking-tight leading-[150%]">
+
+            <h3 className="font-medium lg:font-bold text-[6.5vw] md:text-[5vw] lg:text-[2.7vw] lg:tracking-tight lg:leading-[150%] leading-[160%]">
                 I'm
-                <span className="w-[9vw] h-[2.8vw] px-[1vw] inline-flex items-center justify-center align-middle">
-                    <Image src="/haseeb-ahmed-raza-khan.webp" alt="profile" width={200} height={200} className="rounded-[2vw] object-cover object-center w-full h-full" />
+                <span className="w-[22vw] h-[7vw] lg:w-[9vw] lg:h-[2.8vw] px-[3vw] lg:px-[1vw] inline-flex items-center justify-center align-middle">
+                    <Image src="/haseeb-ahmed-raza-khan.webp" alt="profile" width={200} height={200} className="rounded-[3vw] lg:rounded-[2vw] object-cover object-center w-full h-full" />
                 </span>
                 Haseeb Ahmed Raza Khan, a full stack developer who doesn't just build websites, but builds
-                <span className="w-[9vw] h-[2.8vw] px-[1vw] inline-flex items-center justify-center align-middle">
-                    <Image src="/digital.avif" alt="profile" width={200} height={200} className="rounded-[2vw] object-cover object-center w-full h-full" />
+                <span className="w-[22vw] h-[7vw] lg:w-[9vw] lg:h-[2.8vw] px-[3vw] lg:px-[1vw] inline-flex items-center justify-center align-middle">
+                    <Image src="/digital.avif" alt="profile" width={200} height={200} className="rounded-[3vw] lg:rounded-[2vw] object-cover object-center w-full h-full" />
                 </span>
                 digital leverage. I've helped startups, agencies, and business leaders turn ideas into high converting
-                <span className="w-[9vw] h-[2.8vw] px-[1vw] inline-flex items-center justify-center align-middle">
-                    <Image src="/grow.avif" alt="profile" width={200} height={200} className="rounded-[2vw] object-cover object-center w-full h-full" />
+                <span className="w-[22vw] h-[7vw] lg:w-[9vw] lg:h-[2.8vw] px-[3vw] lg:px-[1vw] inline-flex items-center justify-center align-middle">
+                    <Image src="/grow.avif" alt="profile" width={200} height={200} className="rounded-[3vw] lg:rounded-[2vw] object-cover object-center w-full h-full" />
                 </span>
                 platforms with scalable code, seamless
-                <span className="w-[9vw] h-[2.8vw] px-[1vw] inline-flex items-center justify-center align-middle">
-                    <Image src="/ui.avif" alt="profile" width={200} height={200} className="rounded-[2vw] object-cover object-center w-full h-full" />
+                <span className="w-[22vw] h-[7vw] lg:w-[9vw] lg:h-[2.8vw] px-[3vw] lg:px-[1vw] inline-flex items-center justify-center align-middle">
+                    <Image src="/ui.avif" alt="profile" width={200} height={200} className="rounded-[3vw] lg:rounded-[2vw] object-cover object-center w-full h-full" />
                 </span>
                 UX, and performance driven design.
             </h3>
             <div className="w-full flex justify-end">
                 {/* Placeholder div to maintain layout */}
-                <div 
+                <div
                     ref={placeholderRef}
                     className={`${isExpanded ? 'w-[30vw] h-[30vw]' : 'hidden'}`}
                 />
@@ -105,11 +105,10 @@ export default function About2() {
                 <div
                     ref={imageRef}
                     onClick={!isExpanded ? handleImageClick : handleBackdropClick}
-                    className={`cursor-pointer ${
-                        isExpanded
+                    className={`cursor-pointer ${isExpanded
                             ? 'fixed inset-0 z-50 bg-black/80 flex items-center justify-center transition-all duration-700 ease-out'
                             : 'relative transition-all duration-700 ease-in-out'
-                    }`}
+                        }`}
                     style={
                         isExpanded && originalPosition.current
                             ? {
@@ -128,11 +127,10 @@ export default function About2() {
                         width={1000}
                         height={700}
                         onClick={isExpanded ? handleImageClickWhenExpanded : undefined}
-                        className={`select-none transition-all duration-700 ease-out ${
-                            isExpanded
+                        className={`select-none transition-all duration-700 ease-out ${isExpanded
                                 ? 'max-w-[90vw] max-h-[90vh] object-contain cursor-pointer animate-expand-from-origin'
-                                : 'object-cover object-center w-full h-full max-w-[30vw]'
-                        }`}
+                                : 'object-cover object-center w-full h-full lg:max-w-[30vw]'
+                            }`}
                         style={
                             isExpanded && originalPosition.current
                                 ? {

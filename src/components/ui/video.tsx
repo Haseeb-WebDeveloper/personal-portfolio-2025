@@ -13,6 +13,7 @@ export default function HomeVideo() {
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [isControlsHovered, setIsControlsHovered] = useState(false);
+    const [isLargeScreen, setIsLargeScreen] = useState(false);
 
     const videoRef = useRef<HTMLVideoElement>(null);
     const cursorRef = useRef<HTMLDivElement>(null);
@@ -27,7 +28,7 @@ export default function HomeVideo() {
         gsap.registerPlugin(ScrollTrigger);
 
         // Check if we're on a large screen before applying scroll animation
-        const isLargeScreen = window.innerWidth >= 768; // md breakpoint
+        setIsLargeScreen(window.innerWidth >= 768);
 
         if (isLargeScreen) {
             // Video container only for large screens
@@ -79,7 +80,7 @@ export default function HomeVideo() {
 
             gsap.set(cursor, {
                 x: centerX,
-                y: centerY + 50,
+                y: centerY + `${isLargeScreen ? 50 : 20}`,
                 scale: cursorSize
             });
 
@@ -103,7 +104,7 @@ export default function HomeVideo() {
                     // Return to center when mouse leaves
                     gsap.to(cursor, {
                         x: centerX,
-                        y: centerY + 50,
+                        y: centerY + `${isLargeScreen ? 50 : 20}`,
                         duration: 1.2,
                         ease: "power2.out"
                     });
@@ -291,9 +292,9 @@ export default function HomeVideo() {
                     }}
                 >
                     {isPlaying ? (
-                        <Image src="/icon/stop-icon.svg" alt="stop" width={100} height={100} className=" w-[20vw] h-[20vw] md:w-[7vw] md:h-[7vw]" />
+                        <Image src="/icon/stop-icon.svg" alt="stop" width={100} height={100} className="w-[12vw] h-[12vw] md:w-[7vw] md:h-[7vw]" />
                     ) : (
-                        <Image src="/icon/play-video-icon.svg" alt="play" width={100} height={100} className=" w-[20vw] h-[20vw] md:w-[7vw] md:h-[7vw]" />
+                        <Image src="/icon/play-video-icon.svg" alt="play" width={100} height={100} className="w-[12vw] h-[12vw] md:w-[7vw] md:h-[7vw]" />
                     )}
                 </div>
             </div>
@@ -322,7 +323,7 @@ export default function HomeVideo() {
                 <div className="flex items-center justify-between p-[0.5vw]">
                     <div className="flex items-center md:gap-[1vw] gap-[2vw]">
                         {/* Time display */}
-                        <span className="md:text-[1.2vw] text-[2vw]">
+                        <span className="text-[3vw]  md:text-[2vw] lg:text-[1.2vw]">
                             {formatTime(currentTime)} / {formatTime(duration)}
                         </span>
 
@@ -332,9 +333,9 @@ export default function HomeVideo() {
                             className="cursor-pointer"
                         >
                             {isMuted ? (
-                                <VolumeX className="md:w-[2vw] md:h-[2vw] w-[3vw] h-[3vw]" />
+                                <VolumeX className="w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[3vw] lg:h-[3vw]" />
                             ) : (
-                                <Volume2 className="md:w-[2vw] md:h-[2vw] w-[3vw] h-[3vw]" />
+                                <Volume2 className="w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[3vw] lg:h-[3vw]" />
                             )}
                         </button>
                     </div>
@@ -344,7 +345,7 @@ export default function HomeVideo() {
                         onClick={handleFullscreen}
                         className="cursor-pointer"
                     >
-                        <Maximize className="md:w-[2vw] md:h-[2vw] w-[3vw] h-[3vw]" />
+                        <Maximize className="w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[3vw] lg:h-[3vw]" />
                     </button>
                 </div>
             </div>

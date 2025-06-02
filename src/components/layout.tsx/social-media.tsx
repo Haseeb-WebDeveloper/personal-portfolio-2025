@@ -43,8 +43,8 @@ function SocialMediaIcon() {
         <div className=''>
             <div className=' inline-flex gap-3 '>
                 {socialMedia.map((item, index) => (
-                    <Link href={item.url} className='p-[1vw] flex justify-center items-center border border-foreground/70 rounded-full transition ease-linear ' aria-label={`Haseeb Ahmed ${item.name} profile`} rel="noopener noreferrer" key={index}>
-                        <Image src={item.icon} alt={item.name} width={20} height={20} className='w-[1.5vw] h-[1.5vw]' />
+                    <Link href={item.url} className='lg:p-[1vw] p-[3vw] flex justify-center items-center border border-foreground/70 rounded-full transition ease-linear ' aria-label={`Haseeb Ahmed ${item.name} profile`} rel="noopener noreferrer" key={index}>
+                        <Image src={item.icon} alt={item.name} width={20} height={20} className='lg:w-[1.5vw] lg:h-[1.5vw] w-[5vw] h-[5vw]' />
                     </Link>
                 ))}
             </div>

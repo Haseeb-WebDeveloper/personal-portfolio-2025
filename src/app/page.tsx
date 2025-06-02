@@ -9,8 +9,12 @@ export default function Home() {
     <>
       <HeroSection />
       <HeroProjects />
+      <div className="mt-[8vw] mb-[4vw]">
       <TechStack />
-      <CTASection />
+      </div>
+      <div className="mt-[10vw] mb-[8vw]">
+        <CTASection />
+      </div>
     </>
   );
 }

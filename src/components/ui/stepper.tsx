@@ -107,9 +107,9 @@ export default function Stepper({
   };
 
   return (
-    <div className="outer-container" {...rest}>
+    <div className="flex flex-col items-center justify-center w-full h-full" {...rest}>
       <div
-        className={`step-circle-container ${stepCircleContainerClassName}`}
+        className={`step-circle-container w-fit mx-auto xl:min-w-[30vw] lg:min-w-[38vw] md:min-w-[80vw] min-w-[90vw] border border-border rounded-[1vw] p-[1vw] ${stepCircleContainerClassName}`}
         style={{ border: "1px solid #222" }}
       >
         <div className={`step-indicator-row ${stepContainerClassName}`}>
@@ -155,7 +155,7 @@ export default function Stepper({
               {currentStep !== 1 && (
                 <button
                   onClick={handleBack}
-                  className={`back-button ${currentStep === 1 ? "inactive" : ""}`}
+                  className={`back-button cursor-pointer  ${currentStep === 1 ? "inactive" : ""}`}
                   {...backButtonProps}
                 >
                   {backButtonText}

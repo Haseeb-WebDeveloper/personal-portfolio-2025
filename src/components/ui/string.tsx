@@ -2,46 +2,47 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 
 export default function String() {
-    // Refs for SVG path and container elements
     const pathRef = useRef<SVGPathElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
+    const svgRef = useRef<SVGSVGElement>(null)
 
     useEffect(() => {
         const container = containerRef.current
         const path = pathRef.current
-        if (!container || !path) return
+        const svg = svgRef.current
+        if (!container || !path || !svg) return
 
-        // Function to update the SVG path based on container dimensions
         const updatePath = () => {
-            const width = window.innerWidth
             const rect = container.getBoundingClientRect()
-            const centerY = rect.height / 2
-            // Create a quadratic Bezier curve path
+            const width = rect.width
+            const height = rect.height
+            const centerY = height / 2
+
+            // Set SVG viewBox to match container dimensions
+            svg.setAttribute('viewBox', `0 0 ${width} ${height}`)
+
             path.setAttribute('d', `M 0 ${centerY} Q ${width / 2} ${centerY} ${width} ${centerY}`)
-            return { width, centerY }
+            return { width, height, centerY }
         }
 
-        // Initialize the path
-        const { width, centerY } = updatePath()
+        const { width, height, centerY } = updatePath()
 
-        // Handle mouse movement to create interactive string effect
         const handleMouseMove = (e: MouseEvent) => {
             const rect = container.getBoundingClientRect()
+
+            // Get mouse position relative to container
             const relativeY = e.clientY - rect.top
 
-            // Constrain vertical movement within container bounds
-            const maxOffset = rect.height
-            const clampedY = Math.min(Math.max(relativeY, centerY - maxOffset), centerY + maxOffset)
+            // Since SVG viewBox matches container dimensions, coordinates align directly
+            const clampedY = Math.min(Math.max(relativeY, 0), height)
 
-            // Animate path to follow mouse with smooth easing
             gsap.to(path, {
                 attr: { d: `M 0 ${centerY} Q ${width / 2} ${clampedY} ${width} ${centerY}` },
                 duration: 0.2,
-                ease: "power2.out"
+                ease: "power2.out",
             })
         }
 
-        // Reset string to center position when mouse leaves
         const handleMouseLeave = () => {
             gsap.to(path, {
                 attr: { d: `M 0 ${centerY} Q ${width / 2} ${centerY} ${width} ${centerY}` },
@@ -50,15 +51,14 @@ export default function String() {
             })
         }
 
-        // Update path on window resize
-        const handleResize = updatePath
+        const handleResize = () => {
+            updatePath()
+        }
 
-        // Add event listeners
         container.addEventListener('mousemove', handleMouseMove)
         container.addEventListener('mouseleave', handleMouseLeave)
         window.addEventListener('resize', handleResize)
 
-        // Cleanup event listeners
         return () => {
             container.removeEventListener('mousemove', handleMouseMove)
             container.removeEventListener('mouseleave', handleMouseLeave)
@@ -67,23 +67,23 @@ export default function String() {
     }, [])
 
     return (
-        // Container for the interactive string
-        <div ref={containerRef} className="w-screen h-[20vw] relative overflow-hidden">
-            <svg
-                className=''
-                width="100%"
-                height="100%"
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="none"
-            >
-                {/* SVG path that creates the string effect */}
-                <path
-                    ref={pathRef}
-                    stroke="currentColor"
-                    fill="transparent"
-                    strokeWidth="1"
-                />
-            </svg>
+        <div className='-my-[6vw]'>
+            <div ref={containerRef} className="w-screen h-[30vw] lg:h-[50vw] relative overflow-hidden">
+                <svg
+                    ref={svgRef}
+                    className="absolute inset-0"
+                    width="100%"
+                    height="100%"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        ref={pathRef}
+                        stroke="white"
+                        fill="transparent"
+                        strokeWidth="1"
+                    />
+                </svg>
+            </div>
         </div>
     )
 }

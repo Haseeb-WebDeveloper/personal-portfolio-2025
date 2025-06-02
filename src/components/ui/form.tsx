@@ -15,7 +15,6 @@ interface FormData {
     companyName: string
     email: string
     projectType: string
-    industry: string
     projectDescription: string
     budget: string
 }
@@ -25,7 +24,6 @@ interface FormErrors {
     country: string
     email: string
     projectType: string
-    industry: string
     projectDescription: string
 }
 
@@ -37,7 +35,6 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
         companyName: "",
         email: "",
         projectType: "",
-        industry: "",
         projectDescription: "",
         budget: ""
     })
@@ -46,7 +43,6 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
         country: "",
         email: "",
         projectType: "",
-        industry: "",
         projectDescription: ""
     })
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -69,9 +65,6 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
                 return ""
             case 'projectType':
                 if (!value) return "Please select a project type"
-                return ""
-            case 'industry':
-                if (!value) return "Please select your industry"
                 return ""
             case 'projectDescription':
                 if (!value.trim()) return "Project description is required"
@@ -115,14 +108,6 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
                 break
 
             case 3:
-                const industryError = validateField('industry', formData.industry)
-                if (industryError) {
-                    stepErrors.industry = industryError
-                    isValid = false
-                }
-                break
-
-            case 4:
                 const descriptionError = validateField('projectDescription', formData.projectDescription)
                 if (descriptionError) {
                     stepErrors.projectDescription = descriptionError
@@ -130,7 +115,7 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
                 }
                 break
 
-            case 5:
+            case 4:
                 break
         }
 
@@ -147,10 +132,8 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
             case 2:
                 return !validateField('projectType', formData.projectType)
             case 3:
-                return !validateField('industry', formData.industry)
-            case 4:
                 return !validateField('projectDescription', formData.projectDescription)
-            case 5:
+            case 4:
                 return true
             default:
                 return false
@@ -162,7 +145,6 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
             !validateField('email', formData.email) &&
             !validateField('country', formData.country) &&
             !validateField('projectType', formData.projectType) &&
-            !validateField('industry', formData.industry) &&
             !validateField('projectDescription', formData.projectDescription)
     }
 
@@ -185,7 +167,7 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
     }
 
     const handleSubmit = async () => {
-        if (!validateCurrentStep(5)) return
+        if (!validateCurrentStep(4)) return
 
         setIsSubmitting(true)
         try {
@@ -207,7 +189,6 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
                 //         companyName: "",
                 //         email: "",
                 //         projectType: "",
-                //         industry: "",
                 //         projectDescription: "",
                 //         budget: ""
                 //     })
@@ -216,7 +197,6 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
                 //         country: "",
                 //         email: "",
                 //         projectType: "",
-                //         industry: "",
                 //         projectDescription: ""
                 //     })
                 //     setIsSuccess(false)
@@ -233,12 +213,12 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
             <div className="max-w-full w-screen h-screen flex flex-col bg-background p-0 gap-0 border-0">
                 <button
                     onClick={handleFormOpen}
-                    className="cursor-pointer absolute right-4 top-4 p-2 hover:bg-accent rounded-full z-50"
+                    className="cursor-pointer absolute right-[1vw] top-[1vw] p-2 hover:bg-accent rounded-full z-50"
                 >
-                    <X className="h-6 w-6" />
+                    <X className="xl:h-[3vw] xl:w-[3vw] lg:h-[2vw] lg:w-[2vw] md:h-[3vw] md:w-[3vw] h-[6vw] w-[6vw]" />
                 </button>
 
-                <div className="flex-1 flex flex-col items-center justify-center w-full h-full">
+                <div className="flex flex-col items-center justify-center w-full h-full">
                     {isSuccess ? (
                         <div className="text-center space-y-[3vw]">
                             <div className="text-center space-y-[2vw]">
@@ -252,7 +232,7 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
                             </div>
                         </div>
                     ) : (
-                        <div className="w-full max-w-3xl mx-auto px-4">
+                        <div className="w-full mx-auto">
                             <Stepper
                                 onFinalStepCompleted={handleSubmit}
                                 onStepChange={handleStepChange}
@@ -265,8 +245,8 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
                                 }}
                             >
                                 <Step>
-                                    <div className="space-y-[3vw] w-full">
-                                        <h3 className="text-2xl font-bold text-center">Let's get to know you</h3>
+                                    <div className="md:space-y-[3vw] space-y-[10vw] w-full">
+                                        <h3 className="text-[5vw] md:text-[4vw] lg:text-[1.5vw] leading-[110%] font-bold">Let's get to know you</h3>
                                         <div className="space-y-4">
                                             <div>
                                                 <Input
@@ -317,27 +297,31 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
 
                                 {/* Step 2: Project Type */}
                                 <Step>
-                                    <div className="space-y-[3vw] w-full">
-                                        <h3 className="text-2xl font-bold text-center">What type of project do you need?</h3>
-                                        <div className="flex gap-[1.2vw]">
-                                            <button
-                                                onClick={() => handleInputChange('projectType', 'new')}
-                                                className={`cursor-pointer p-[2.5vw] text-[1.3vw] font-semibold border border-border rounded-[1.5vw]
+                                    <div className="md:space-y-[3vw] space-y-[10vw] w-full">
+                                        <h3 className="text-[5vw] md:text-[4vw] lg:text-[1.5vw] leading-[110%] font-bold">What type of project do you need?</h3>
+                                        <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-[1.2vw] gap-[4vw]">
+                                            <div>
+                                                <button
+                                                    onClick={() => handleInputChange('projectType', 'new')}
+                                                    className={`w-full h-full cursor-pointer p-[8vw] lg:p-[2.5vw] lg:text-[1.3vw] md:text-[2vw] text-[4vw] font-semibold border border-border rounded-[1.5vw]
                                                      ${errors.projectType ? 'border-red-500' : ''}
                                                      ${formData.projectType === "new" ? "bg-secondary text-secondary-foreground" : "bg-background text-foreground"}
                                                      `}
-                                            >
-                                                New Website
-                                            </button>
-                                            <button
-                                                onClick={() => handleInputChange('projectType', 'redesign')}
-                                                className={`cursor-pointer p-[2.5vw] text-[1.3vw] font-semibold border border-border rounded-[1.5vw]
+                                                >
+                                                    New Website
+                                                </button>
+                                            </div>
+                                            <div>
+                                                <button
+                                                    onClick={() => handleInputChange('projectType', 'redesign')}
+                                                    className={`w-full h-full cursor-pointer  p-[8vw] lg:p-[2.5vw] lg:text-[1.3vw] md:text-[2vw] text-[4vw] font-semibold border border-border rounded-[1.5vw]
                                                      ${errors.projectType ? 'border-red-500' : ''}
                                                      ${formData.projectType === "redesign" ? "bg-secondary text-secondary-foreground" : "bg-background text-foreground"}
                                                      `}
-                                            >
-                                                Redesign Existing Site
-                                            </button>
+                                                >
+                                                    Redesign Existing Site
+                                                </button>
+                                            </div>
                                         </div>
                                         {errors.projectType && (
                                             <p className="text-red-500 text-sm text-center">{errors.projectType}</p>
@@ -345,39 +329,10 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
                                     </div>
                                 </Step>
 
-                                {/* Step 3: Industry */}
+                                {/* Step 3: Project Description */}
                                 <Step>
-                                    <div className="space-y-[3vw] w-full">
-                                        <h3 className="text-2xl font-bold text-center">What industry are you in?</h3>
-                                        <div>
-                                            <Select
-                                                value={formData.industry}
-                                                onValueChange={(value) => handleInputChange('industry', value)}
-                                            >
-                                                <SelectTrigger className={`w-full ${errors.industry ? 'border-red-500' : ''}`}>
-                                                    <SelectValue placeholder="Select your industry" />
-                                                </SelectTrigger>
-                                                <SelectContent>
-                                                    <SelectItem value="ecommerce">E-commerce</SelectItem>
-                                                    <SelectItem value="education">Education</SelectItem>
-                                                    <SelectItem value="healthcare">Healthcare</SelectItem>
-                                                    <SelectItem value="technology">Technology</SelectItem>
-                                                    <SelectItem value="finance">Finance</SelectItem>
-                                                    <SelectItem value="ai">AI</SelectItem>
-                                                    <SelectItem value="other">Other</SelectItem>
-                                                </SelectContent>
-                                            </Select>
-                                            {errors.industry && (
-                                                <p className="text-red-500 text-sm mt-1">{errors.industry}</p>
-                                            )}
-                                        </div>
-                                    </div>
-                                </Step>
-
-                                {/* Step 4: Project Description */}
-                                <Step>
-                                    <div className="space-y-[3vw] w-full">
-                                        <h3 className="text-2xl font-bold text-center">Tell us about your project</h3>
+                                    <div className="md:space-y-[3vw] space-y-[10vw] w-full">
+                                        <h3 className="text-[5vw] md:text-[4vw] lg:text-[1.5vw] leading-[110%] font-bold">Tell us about your project</h3>
                                         <div>
                                             <Textarea
                                                 placeholder="Describe your project idea in a few sentences..."
@@ -392,10 +347,10 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
                                     </div>
                                 </Step>
 
-                                {/* Step 5: Budget */}
+                                {/* Step 4: Budget */}
                                 <Step>
-                                    <div className="space-y-[3vw] w-full">
-                                        <h3 className="text-2xl font-bold text-center">What's your budget? (Optional)</h3>
+                                    <div className="md:space-y-[3vw] space-y-[10vw] w-full">
+                                        <h3 className="text-[5vw] md:text-[4vw] lg:text-[1.5vw] leading-[110%] font-bold">What's your budget? (Optional)</h3>
                                         <Input
                                             placeholder="Enter your budget range in USD"
                                             value={formData.budget}

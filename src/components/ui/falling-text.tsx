@@ -223,7 +223,7 @@ const FallingText: React.FC<FallingTextProps> = ({
   return (
     <div
       ref={containerRef}
-      className="falling-text-container h-full w-full min-h-[15vw] overflow-hidden"
+      className="falling-text-container h-full w-full lg:min-h-[15vw] min-h-[100vw] overflow-hidden"
       onClick={trigger === "click" ? handleTrigger : undefined}
       onMouseOver={trigger === "hover" ? handleTrigger : undefined}
       style={{
@@ -233,7 +233,7 @@ const FallingText: React.FC<FallingTextProps> = ({
     >
       <div
         ref={textRef}
-        className="falling-text-target text-[1vw] lg:text-[1.5vw] font-leight"
+        className="falling-text-target text-[4vw] lg:text-[1.5vw]"
         style={{
           lineHeight: 1.4,
         }}

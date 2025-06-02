@@ -1,8 +1,6 @@
 import HomeVideo from "../ui/video";
 import "@/style/glow.css";
-import AboutSection from "./about-section";
 import About2 from "./about-2";
-import HeroProjects from "../projects/hero-projects";
 
 
 export default function HeroSection() {
@@ -10,11 +8,11 @@ export default function HeroSection() {
         <>
             {/* hero section */}
             < div className="max-w-[85vw] w-full mx-auto absolute z-[10] top-[35vw] md:top-[18vw] left-1/2 -translate-x-1/2" >
-                <h3 id="text" className="font-bold text-[6vw] md:text-[5.5vw] lg:text-[6vw] tracking-tight text-center leading-[130%]">
+                <h3 id="text" className="font-medium leading-[140%] lg:font-bold text-[12vw] md:text-[5.5vw] lg:text-[12vw] tracking-tight text-center lg:leading-[130%]">
                     helping bussinesses build <span className='text-primary'>websites</span> that works
                 </h3>
             </div >
-            < div className="mt-0 md:mt-[18vw] mb-[12vw] h-[100vh] md:h-[42vw] w-full relative overflow-hidden" >
+            < div className="mt-0 md:mt-[18vw] mb-[12vw] h-[93vh] lg:h-[100vh] md:h-[42vw] w-full relative overflow-hidden" >
                 <div className="wrapper absolute top-0 left-0 w-full h-full">
                     <div className="gradient gradient-1"></div>
                     <div className="gradient gradient-2"></div>

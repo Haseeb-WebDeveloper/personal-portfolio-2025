@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer'
 export async function POST(req: Request) {
     try {
         const body = await req.json()
-        const { projectType, industry, projectIdea, projectDescription, budget } = body
+        const { projectType, projectDescription, budget } = body
 
         // Create transporter
         const transporter = nodemailer.createTransport({
@@ -22,8 +22,6 @@ export async function POST(req: Request) {
             New Project Inquiry
             
             Project Type: ${projectType}
-            Industry: ${industry}
-            Has Project Idea: ${projectIdea}
             Project Description: ${projectDescription || 'Not provided'}
             Budget Range: ${budget || 'Not specified'}
         `
