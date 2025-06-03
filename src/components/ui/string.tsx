@@ -68,7 +68,7 @@ export default function String() {
 
     return (
         <div className='-my-[6vw]'>
-            <div ref={containerRef} className="w-screen h-[30vw] lg:h-[50vw] relative overflow-hidden">
+            <div ref={containerRef} className="w-screen h-[50vw] lg:h-[30vw] relative overflow-hidden">
                 <svg
                     ref={svgRef}
                     className="absolute inset-0"

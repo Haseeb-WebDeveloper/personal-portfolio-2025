@@ -14,7 +14,7 @@ export default function TechStack() {
     }, []);
 
     return (
-        <div className="py-[6vw]">
+        <div className="lg:py-[6vw] mt-[40vw] mb-[30vw] lg:mt-0 lg:mb-0">
             <section className="section">
                 <h1 className="text-[10vw] lg:text-[4vw] font-medium lg:font-bold">Tech Stack 🔥</h1>
                 <FallingText

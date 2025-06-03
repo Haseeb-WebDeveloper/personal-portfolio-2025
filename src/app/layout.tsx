@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     siteName: 'Haseeb Ahmed Raza Khan Portfolio',
     images: [
       {
-        url: 'haseeb-ahmed-raza-khan.webp',
+        url: 'Haseeb-Ahmed-Raza-Khan-Full-Stack-Developer-OpenGrah-Image.png',
         width: 1200,
         height: 630,
       },
@@ -99,11 +99,11 @@ export const metadata: Metadata = {
     type: 'website',
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
     title: 'Haseeb Ahmed Raza Khan – Full Stack Developer',
     description: 'Haseeb Ahmed Raza Khan is a full stack developer. He has helped many companies to build their websites and applications.',
     creator: '@haseeb_dev_',
-    images: ['haseeb-ahmed-raza-khan.webp'],
+    images: ['Haseeb-Ahmed-Raza-Khan-Full-Stack-Developer-OpenGrah-Image.png'],
   },
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION || '',
