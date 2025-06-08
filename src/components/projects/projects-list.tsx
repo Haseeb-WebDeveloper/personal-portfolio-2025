@@ -1,9 +1,4 @@
-"use client"
-
 import { IProjects } from "@/constent/projects";
-import { usePathname } from "next/navigation";
-import Image from "next/image";
-import { useState, useRef, useEffect } from "react";
 import ProjectImageCarousel from "./project-image-carousel";
 
 
@@ -17,13 +12,6 @@ export default function ProjectsList({ projects }: { projects: IProjects[] }) {
                             key={project.slug}
                             className={`relative grid grid-cols-1 md:grid-cols-2 border-foreground/20 ${index === projects.length - 1 ? 'lg:border-y' : 'lg:border-t '}`}
                         >
-                            {/* <Image
-                                src={project.projectImages[0].image || ''}
-                                alt={project.title}
-                                width={800}
-                                height={600}
-                                className="w-full object-cover "
-                            /> */}
                             <div className="relative">
                                 <ProjectImageCarousel
                                     images={project.projectImages}
