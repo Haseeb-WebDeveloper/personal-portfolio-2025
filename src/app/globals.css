@@ -377,7 +377,7 @@ html {
 
 .highlighted {
   color: var(--primary);
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .falling-text-canvas {

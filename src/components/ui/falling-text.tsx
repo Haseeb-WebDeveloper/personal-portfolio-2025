@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import Matter from "matter-js";
 
 interface FallingTextProps {
-  text?: string;
+  text: string[] | string;
   highlightWords?: string[];
   highlightClass?: string;
   trigger?: "auto" | "scroll" | "click" | "hover";
@@ -16,7 +16,7 @@ interface FallingTextProps {
 }
 
 const FallingText: React.FC<FallingTextProps> = ({
-  text = "",
+  text = [],
   highlightWords = [],
   highlightClass = "highlighted",
   trigger = "auto",
@@ -34,10 +34,10 @@ const FallingText: React.FC<FallingTextProps> = ({
 
   useEffect(() => {
     if (!textRef.current) return;
-    const words = text.split(" ");
+    const words = Array.isArray(text) ? text : text.split(" ");
     const newHTML = words
       .map((word) => {
-        const isHighlighted = highlightWords.some((hw) => word.startsWith(hw));
+        const isHighlighted = highlightWords.some((hw) => word === hw);
         return `<span class="word ${isHighlighted ? highlightClass : ""}">${word}</span>`;
       })
       .join(" ");
@@ -223,7 +223,7 @@ const FallingText: React.FC<FallingTextProps> = ({
   return (
     <div
       ref={containerRef}
-      className="falling-text-container h-full w-full lg:min-h-[15vw] min-h-[100vw] overflow-hidden"
+      className="falling-text-container h-full w-full lg:min-h-[20vw] min-h-[120vw] overflow-hidden"
       onClick={trigger === "click" ? handleTrigger : undefined}
       onMouseOver={trigger === "hover" ? handleTrigger : undefined}
       style={{
