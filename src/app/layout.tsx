@@ -7,6 +7,8 @@ import SmoothScrolling from "@/components/smooth-scrolling";
 import { Footer } from "@/components/ui/footer";
 import Navbar from "@/components/layout.tsx/navbar";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -153,6 +155,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="w-full h-screen select-none">
+            <Analytics />
+            <SpeedInsights />
             <SmoothScrolling>
               <Navbar />
               {children}
