@@ -43,19 +43,19 @@ export const heroProjects: IHeroProjects[] = [
         projectImages: [
             {
                 url: "https://figmenta.com",
-                image: "/projects/figmenta-live.png",
+                image: "/projects/figmenta-live.webp",
             },
             {
                 url: "https://studio.figmenta.com",
-                image: "/projects/figmenta-studio.png",
+                image: "/projects/figmenta-studio.webp",
             },
             {
                 url: "https://live.figmenta.com",
-                image: "/projects/figmenta-live.png",
+                image: "/projects/figmenta-live.webp",
             },
             {
                 url: "https://production.figmenta.com",
-                image: "/projects/figmenta-studio.png",
+                image: "/projects/figmenta-studio.webp",
             },
         ],
         techStack: ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS", "Shadcn/UI", "WebGL", "GSAP", "Figma", "Notion"],
@@ -78,11 +78,11 @@ export const heroProjects: IHeroProjects[] = [
     //     title: "Enzig Studio",
     //     description: "Enzig Studio is a creative digital marketing agency in Gurgaon, India that offers a range of services to help businesses grow and succeed online.",
     //     category: "Digital Agency",
-    //     logo: "/logos/enzig.png",
+    //     logo: "/logos/enzig.webp",
     //     projectImages: [
     //         {
     //             url: "https://enzigstudio.com",
-    //             image: "/projects/enzig.png",
+    //             image: "/projects/enzig.webp",
     //         },
     //     ],
     //     techStack: ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS", "Shadcn/UI", "WebGL", "GSAP", "Figma", "Upwork"],
@@ -105,11 +105,11 @@ export const heroProjects: IHeroProjects[] = [
         title: "Shoelite",
         description: "Shoelite is an online website designed to help young entrepreneurs learn eCommerce, trading, and financial.",
         category: "Education",
-        logo: "/logos/enzig.png",
+        logo: "/logos/enzig.webp",
         projectImages: [
             {
                 url: "https://shoelite.club",
-                image: "/projects/shoelite.png",
+                image: "/projects/shoelite.webp",
             },
         ],
         techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "GSAP", "Brevo", "Upwork"],
@@ -132,11 +132,11 @@ export const heroProjects: IHeroProjects[] = [
         title: "Rateourjob",
         description: "A modern AI-powered review platform helping businesses build trust and get valuable customer feedback — all on autopilot.",
         category: "AI & Business",
-        logo: "/logos/rateourjob.png",
+        logo: "/logos/rateourjob.webp",
         projectImages: [
             {
                 url: "https://www.rateourjob.com",
-                image: "/projects/rateourjob.png",
+                image: "/projects/rateourjob.webp",
             },
         ],
         techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "GSAP", "Brevo", "Sanity CMS"],
@@ -159,11 +159,11 @@ export const heroProjects: IHeroProjects[] = [
         title: "Fuzzie Automation",
         description: "An automation web-based software developed to streamline tasks across Google Drive, Slack, Notion, and Discord, simplifying workflow management.",
         category: "Automation Software",
-        logo: "/logos/fuzzie-automation.png",
+        logo: "/logos/fuzzie-automation.webp",
         projectImages: [
             {
                 url: "https://github.com/Haseeb-WebDeveloper",
-                image: "/projects/fuzzie-automation.png",
+                image: "/projects/fuzzie-automation.webp",
             },
         ],
         techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "GSAP", "Node", "Express", "MongoDB", "Clerk", "Diffrent APIs"],
@@ -186,11 +186,11 @@ export const heroProjects: IHeroProjects[] = [
         title: "Assess GPT",
         description: "A web-based software that helps colleges to manage assignments, AI is used to grade assignments and provide feedback",
         category: "AI Multi Tenant Platform",
-        logo: "/logos/assess-gpt.png",
+        logo: "/logos/assess-gpt.webp",
         projectImages: [
             {
                 url: "https://assess-gpt.com",
-                image: "/projects/assess-gpt-2.png",
+                image: "/projects/assess-gpt-2.webp",
             },
         ],
         techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "GSAP", "Node", "Express", "MongoDB", "AI APIs"],
@@ -223,19 +223,19 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://figmenta.com",
-                image: "/projects/figmenta-live.png",
+                image: "/projects/figmenta-live.webp",
             },
             {
                 url: "https://studio.figmenta.com",
-                image: "/projects/figmenta-studio.png",
+                image: "/projects/figmenta-studio.webp",
             },
             {
                 url: "https://live.figmenta.com",
-                image: "/projects/figmenta-live.png",
+                image: "/projects/figmenta-live.webp",
             },
             {
                 url: "https://production.figmenta.com",
-                image: "/projects/figmenta-studio.png",
+                image: "/projects/figmenta-studio.webp",
             },
         ],
         techStack: ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS", "Shadcn/UI", "WebGL", "GSAP", "Figma", "Notion"],
@@ -249,7 +249,7 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://indiamasters.co.in",
-                image: "/projects/indiamasters.png"
+                image: "/projects/indiamasters.webp"
             }
         ],
         techStack: [
@@ -271,7 +271,7 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://uptraction.com",
-                image: "/projects/uptraction.png"
+                image: "/projects/uptraction.webp"
             }
         ],
         techStack: [
@@ -290,7 +290,7 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://enzigstudio.com",
-                image: "/projects/enzig.png",
+                image: "/projects/enzig.webp",
             },
         ],
         techStack: ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS", "Shadcn/UI", "WebGL", "GSAP", "Figma", "Upwork"],
@@ -304,7 +304,7 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://shoelite.club",
-                image: "/projects/shoelite.png",
+                image: "/projects/shoelite.webp",
             },
         ],
         techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "GSAP", "Brevo", "Upwork"],
@@ -318,7 +318,7 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://www.rateourjob.com",
-                image: "/projects/rateourjob.png",
+                image: "/projects/rateourjob.webp",
             },
         ],
         techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "GSAP", "Brevo", "Sanity CMS"],
@@ -332,7 +332,7 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://www.jsonformatteronline.site/",
-                image: "/projects/jsonformatteronline.png"
+                image: "/projects/jsonformatteronline.webp"
             }
         ],
         techStack: [
@@ -354,7 +354,7 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://github.com/Haseeb-WebDeveloper",
-                image: "/projects/fuzzie-automation.png",
+                image: "/projects/fuzzie-automation.webp",
             },
         ],
         techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "GSAP", "Node", "Express", "MongoDB", "Clerk", "Different APIs"],
@@ -368,7 +368,7 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://assess-gpt.com",
-                image: "/projects/assess-gpt-2.png",
+                image: "/projects/assess-gpt-2.webp",
             },
         ],
         techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "GSAP", "Node", "Express", "MongoDB", "AI APIs"],
@@ -382,7 +382,7 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://ai-seo-tool.netlify.app",
-                image: "/projects/ai-seo-landing-page.png"
+                image: "/projects/ai-seo-landing-page.webp"
             }
         ],
         techStack: [
@@ -405,15 +405,15 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://isodomi.nl/",
-                image: "/projects/isodomi.png"
+                image: "/projects/isodomi.webp"
             },
             {
                 url: "https://duradomi.nl/",
-                image: "/projects/duradomi.png"
+                image: "/projects/duradomi.webp"
             },
             {
                 url: "https://renodomi.nl",
-                image: "/projects/renodomi.png"
+                image: "/projects/renodomi.webp"
             },
         ],
         techStack: [
@@ -435,7 +435,7 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://sentriq.io",
-                image: "/projects/sentriq.png"
+                image: "/projects/sentriq.webp"
             }
         ],
         techStack: [
@@ -454,7 +454,7 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://www.seaside-transportation.com",
-                image: "/projects/seaside-transportation.png"
+                image: "/projects/seaside-transportation.webp"
             }
         ],
         techStack: [
@@ -476,7 +476,7 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://wasif-khan.netlify.app/",
-                image: "/projects/wasif-khan.png"
+                image: "/projects/wasif-khan.webp"
             }
         ],
         techStack: [
