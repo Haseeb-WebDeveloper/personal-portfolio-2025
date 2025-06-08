@@ -5,25 +5,25 @@ import { useEffect } from "react"
 import { motion } from "framer-motion"
 
 export default function NotFound() {
-    useEffect(() => {
-        const cursor = document.getElementById("custom-cursor")
-        const handleMouseMove = (e: MouseEvent) => {
-            if (cursor) {
-                cursor.style.left = e.clientX + "px"
-                cursor.style.top = e.clientY + "px"
-            }
-        }
-        document.addEventListener("mousemove", handleMouseMove)
-        return () => document.removeEventListener("mousemove", handleMouseMove)
-    }, [])
+    // useEffect(() => {
+    //     const cursor = document.getElementById("custom-cursor")
+    //     const handleMouseMove = (e: MouseEvent) => {
+    //         if (cursor) {
+    //             cursor.style.left = e.clientX + "px"
+    //             cursor.style.top = e.clientY + "px"
+    //         }
+    //     }
+    //     document.addEventListener("mousemove", handleMouseMove)
+    //     return () => document.removeEventListener("mousemove", handleMouseMove)
+    // }, [])
 
     return (
         <div className="relative min-h-[80vh] w-full flex items-center justify-center overflow-hidden">
             {/* Custom cursor */}
-            <div
+            {/* <div
                 id="custom-cursor"
                 className="fixed w-4 h-4 bg-primary rounded-full pointer-events-none mix-blend-difference z-50 -translate-x-1/2 -translate-y-1/2"
-            />
+            /> */}
 
             {/* Background text */}
             <div className="absolute inset-0 flex items-center justify-center opacity-5">

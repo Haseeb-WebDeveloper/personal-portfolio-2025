@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Textarea } from "@/components/ui/textarea"
 import { Input } from "@/components/ui/input"
-import { X } from "lucide-react"
+import { X, Loader2 } from "lucide-react"
 import Stepper, { Step } from "@/components/ui/stepper"
 import SocialMediaIcon from "../layout.tsx/social-media"
 
@@ -236,10 +236,16 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
                                 onStepChange={handleStepChange}
                                 canSubmit={isAllRequiredFieldsValid() && !isSubmitting}
                                 nextButtonProps={{
-                                    className: `cursor-pointer px-8 py-2 rounded-[1vw] ${isCurrentStepValid(currentStep) && !isSubmitting
+                                    className: `cursor-pointer px-8 py-2 rounded-[1vw] inline-flex items-center gap-2 ${isCurrentStepValid(currentStep) && !isSubmitting
                                         ? "bg-primary text-primary-foreground hover:bg-primary/90"
                                         : "bg-foreground/10 cursor-not-allowed"
-                                        }`
+                                        }`,
+                                    children: currentStep === 4 ? (
+                                        <>
+                                            Submit
+                                            {isSubmitting && <Loader2 className="h-4 w-4 animate-spin" />}
+                                        </>
+                                    ) : undefined
                                 }}
                             >
                                 <Step>

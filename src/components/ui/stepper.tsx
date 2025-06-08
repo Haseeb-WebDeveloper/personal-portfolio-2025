@@ -169,7 +169,7 @@ export default function Stepper({
                 disabled={nextButtonProps?.disabled || (isLastStep && !canSubmit)}
                 {...nextButtonProps}
               >
-                {isLastStep ? "Submit" : nextButtonText}
+                {nextButtonProps?.children || (isLastStep ? "Submit" : nextButtonText)}
               </button>
             </div>
           </div>
