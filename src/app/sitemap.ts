@@ -35,6 +35,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 `${baseUrl}/fuzzie-automation.png`,
                 `${baseUrl}/shoelite.png`,
                 `${baseUrl}/rateourjob.png`,
+                `${baseUrl}/indiamasters.png`,
+                `${baseUrl}/renodomi.png`,
+                `${baseUrl}/duradomi.png`,
+                `${baseUrl}/isodomi.png`,
+                `${baseUrl}/sentriq.png`,
+                `${baseUrl}/seaside-transportation.png`,
+                `${baseUrl}/wasif-khan.png`,
             ]
         },
     ]

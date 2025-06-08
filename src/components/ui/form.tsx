@@ -1,8 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { Input } from "@/components/ui/input"
 import { X } from "lucide-react"
@@ -332,7 +330,7 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
                                 {/* Step 3: Project Description */}
                                 <Step>
                                     <div className="md:space-y-[3vw] space-y-[10vw] w-full">
-                                        <h3 className="text-[5vw] md:text-[4vw] lg:text-[1.5vw] leading-[110%] font-bold">Tell us about your project</h3>
+                                        <h3 className="text-[5vw] md:text-[4vw] lg:text-[1.5vw] leading-[110%] font-bold">Whats in your mind about your project.</h3>
                                         <div>
                                             <Textarea
                                                 placeholder="Describe your project idea in a few sentences..."
