@@ -85,33 +85,33 @@ export const heroProjects: IHeroProjects[] = [
             }
         ]
     },
-    {
-        title: "Enzig Studio",
-        description: "Enzig Studio is a creative digital marketing agency in Gurgaon, India that offers a range of services to help businesses grow and succeed online.",
-        category: "Digital Agency",
-        logo: "/logos/enzig.png",
-        projectImages: [
-            {
-                url: "https://enzigstudio.com",
-                image: "/projects/enzig.png",
-            },
-        ],
-        techStack: ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS", "Shadcn/UI", "WebGL", "GSAP", "Figma", "Upwork"],
-        moreInfo: [
-            `<p>My journey with <span class="lg:font-semibold font-medium tracking-wide">Enzig Studio</span> started when they trusted me with building their cricket team website, <span class="font-medium">India Masters</span>. They loved the outcome and soon reached out again, this time to design and develop their <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[1vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">full agency website.</span> It was a big project with over 25 unique pages, modern, high-performance stack.</p>`
-        ],
-        testimonialColor: "#738a20",
-        testimonial: [
-            {
-                name: "Akkshhat Khurania",
-                role: "Founder of Enzig Studio",
-                feedback: "We first worked with Haseeb on our India Masters project and were super happy with the result. So when it came time to build our own agency website, we knew exactly who to call. Haseeb handled everything so smoothly. Highly recomended ❤️",
-                rating: 5,
-                image: "/avator/Akkshhat-Khurania.jpeg",
-                link: "https://www.linkedin.com/in/akshat-aggarwal3501",
-            }
-        ]
-    },
+    // {
+    //     title: "Enzig Studio",
+    //     description: "Enzig Studio is a creative digital marketing agency in Gurgaon, India that offers a range of services to help businesses grow and succeed online.",
+    //     category: "Digital Agency",
+    //     logo: "/logos/enzig.png",
+    //     projectImages: [
+    //         {
+    //             url: "https://enzigstudio.com",
+    //             image: "/projects/enzig.png",
+    //         },
+    //     ],
+    //     techStack: ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS", "Shadcn/UI", "WebGL", "GSAP", "Figma", "Upwork"],
+    //     moreInfo: [
+    //         `<p>My journey with <span class="lg:font-semibold font-medium tracking-wide">Enzig Studio</span> started when they trusted me with building their cricket team website, <span class="font-medium">India Masters</span>. They loved the outcome and soon reached out again, this time to design and develop their <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[1vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">full agency website.</span> It was a big project with over 25 unique pages, modern, high-performance stack.</p>`
+    //     ],
+    //     testimonialColor: "#738a20",
+    //     testimonial: [
+    //         {
+    //             name: "Akkshhat Khurania",
+    //             role: "Founder of Enzig Studio",
+    //             feedback: "We first worked with Haseeb on our India Masters project and were super happy with the result. So when it came time to build our own agency website, we knew exactly who to call. Haseeb handled everything so smoothly. Highly recomended ❤️",
+    //             rating: 5,
+    //             image: "/avator/Akkshhat-Khurania.jpeg",
+    //             link: "https://www.linkedin.com/in/akshat-aggarwal3501",
+    //         }
+    //     ]
+    // },
     {
         title: "Shoelite",
         description: "Shoelite is an online website designed to help young entrepreneurs learn eCommerce, trading, and financial.",

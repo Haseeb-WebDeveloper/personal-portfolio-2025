@@ -18,22 +18,16 @@ export default function String() {
             const height = rect.height
             const centerY = height / 2
 
-            // Set SVG viewBox to match container dimensions
             svg.setAttribute('viewBox', `0 0 ${width} ${height}`)
-
             path.setAttribute('d', `M 0 ${centerY} Q ${width / 2} ${centerY} ${width} ${centerY}`)
-            return { width, height, centerY }
         }
-
-        const { width, height, centerY } = updatePath()
 
         const handleMouseMove = (e: MouseEvent) => {
             const rect = container.getBoundingClientRect()
-
-            // Get mouse position relative to container
+            const width = rect.width
+            const height = rect.height
+            const centerY = height / 2
             const relativeY = e.clientY - rect.top
-
-            // Since SVG viewBox matches container dimensions, coordinates align directly
             const clampedY = Math.min(Math.max(relativeY, 0), height)
 
             gsap.to(path, {
@@ -44,6 +38,11 @@ export default function String() {
         }
 
         const handleMouseLeave = () => {
+            const rect = container.getBoundingClientRect()
+            const width = rect.width
+            const height = rect.height
+            const centerY = height / 2
+
             gsap.to(path, {
                 attr: { d: `M 0 ${centerY} Q ${width / 2} ${centerY} ${width} ${centerY}` },
                 duration: 0.5,
@@ -54,6 +53,8 @@ export default function String() {
         const handleResize = () => {
             updatePath()
         }
+
+        updatePath()
 
         container.addEventListener('mousemove', handleMouseMove)
         container.addEventListener('mouseleave', handleMouseLeave)
@@ -71,9 +72,8 @@ export default function String() {
             <div ref={containerRef} className="w-screen h-[50vw] lg:h-[30vw] relative overflow-hidden">
                 <svg
                     ref={svgRef}
-                    className="absolute inset-0"
-                    width="100%"
-                    height="100%"
+                    className="absolute inset-0 w-full h-full"
+                    preserveAspectRatio="none"
                     xmlns="http://www.w3.org/2000/svg"
                 >
                     <path

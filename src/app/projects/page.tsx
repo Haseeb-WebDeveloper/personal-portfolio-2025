@@ -1,6 +1,8 @@
 import { projects } from "@/constent/projects";
 import ProjectsList from "@/components/projects/projects-list";
 import CTASection from "@/components/cta-section";
+import CTALarge from "@/components/ui/cta-large";
+import CTAMobile from "@/components/ui/cta-mobile";
 
 export default async function Works() {
 
@@ -13,8 +15,11 @@ export default async function Works() {
                 <ProjectsList projects={projects} />
             </div>
 
-            <div className="w-full mt-[14vw] lg:mb-[10vw] mb-[15vw]">
-                <CTASection />
+            <div className="mt-[10vw] mb-[8vw] hidden lg:block">
+                <CTALarge />
+            </div>
+            <div className="mt-[24vw] mb-[20vw] lg:hidden">
+                <CTAMobile />
             </div>
         </>
     );

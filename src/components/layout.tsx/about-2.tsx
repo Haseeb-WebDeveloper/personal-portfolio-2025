@@ -76,12 +76,8 @@ export default function About2() {
                 }
             `}</style>
 
-            <h3 className="font-medium lg:font-bold text-[6.5vw] md:text-[5vw] lg:text-[2.7vw] lg:tracking-tight lg:leading-[150%] leading-[160%]">
-                I'm
-                <span className="w-[22vw] h-[7vw] lg:w-[9vw] lg:h-[2.8vw] px-[3vw] lg:px-[1vw] inline-flex items-center justify-center align-middle">
-                    <Image src="/haseeb-ahmed-raza-khan.webp" alt="profile" width={200} height={200} className="rounded-[3vw] lg:rounded-[2vw] object-cover object-center w-full h-full" />
-                </span>
-                Haseeb Ahmed Raza Khan, a full stack developer who doesn't just build websites, but builds
+            <h3 className="font-medium lg:font-bold text-[6.5vw] md:text-[5vw] lg:text-[3vw] lg:tracking-tight lg:leading-[150%] leading-[160%] ">
+                I'm a full stack developer who doesn't just build websites, but builds
                 <span className="w-[22vw] h-[7vw] lg:w-[9vw] lg:h-[2.8vw] px-[3vw] lg:px-[1vw] inline-flex items-center justify-center align-middle">
                     <Image src="/digital.avif" alt="digital" width={200} height={200} className="rounded-[3vw] lg:rounded-[2vw] object-cover object-center w-full h-full" />
                 </span>
@@ -106,8 +102,8 @@ export default function About2() {
                     ref={imageRef}
                     onClick={!isExpanded ? handleImageClick : handleBackdropClick}
                     className={`cursor-pointer ${isExpanded
-                            ? 'fixed inset-0 z-50 bg-black/80 flex items-center justify-center transition-all duration-700 ease-out'
-                            : 'relative transition-all duration-700 ease-in-out'
+                        ? 'fixed inset-0 z-50 bg-black/80 flex items-center justify-center transition-all duration-700 ease-out'
+                        : 'relative transition-all duration-700 ease-in-out'
                         }`}
                     style={
                         isExpanded && originalPosition.current
@@ -130,8 +126,8 @@ export default function About2() {
                         blurDataURL="/haseeb-on-google.png"
                         onClick={isExpanded ? handleImageClickWhenExpanded : undefined}
                         className={`select-none transition-all duration-700 ease-out ${isExpanded
-                                ? 'max-w-[90vw] max-h-[90vh] object-contain cursor-pointer animate-expand-from-origin'
-                                : 'object-cover object-center w-full h-full lg:max-w-[30vw]'
+                            ? 'max-w-[90vw] max-h-[90vh] object-contain cursor-pointer animate-expand-from-origin'
+                            : 'object-cover object-center w-full h-full lg:max-w-[30vw]'
                             }`}
                         style={
                             isExpanded && originalPosition.current

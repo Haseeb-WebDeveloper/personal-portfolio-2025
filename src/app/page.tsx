@@ -1,8 +1,9 @@
 import HeroSection from "@/components/layout.tsx/hero-section";
 import HeroProjects from "@/components/projects/hero-projects";
-import GSAPCardsAnimation from "@/components/layout.tsx/cards";
-import CTASection from "@/components/cta-section";
 import TechStack from "@/components/layout.tsx/tech-stack";
+import CTALarge from "@/components/ui/cta-large";
+import CTAMobile from "@/components/ui/cta-mobile";
+import TextPressure from "@/components/ui/text-pressure";
 
 export default function Home() {
   return (
@@ -10,10 +11,13 @@ export default function Home() {
       <HeroSection />
       <HeroProjects />
       <div className="mt-[8vw] mb-[4vw]">
-      <TechStack />
+        <TechStack />
       </div>
-      <div className="mt-[10vw] mb-[8vw]">
-        <CTASection />
+      <div className="mt-[10vw] mb-[8vw] hidden lg:block">
+        <CTALarge />
+      </div>
+      <div className="mt-[15vw] mb-[24vw] lg:hidden">
+        <CTAMobile />
       </div>
     </>
   );
