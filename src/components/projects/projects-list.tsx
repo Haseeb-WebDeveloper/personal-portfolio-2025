@@ -30,7 +30,7 @@ export default function ProjectsList({ projects }: { projects: IProjects[] }) {
                                 </div>
                                 <div className="max-w-[90%] flex flex-wrap md:gap-[0.5vw] gap-[2.5vw]">
                                     {project.techStack.map((tech: string, index: number) => (
-                                        <p key={index} className="text-[3.5vw] md:text-[1.5vw] lg:text-[1vw] lg:tracking-normal px-[3vw] py-[2vw] lg:px-[1.2vw] lg:py-[0.5vw] rounded-full border border-border font-medium flex justify-center items-center">{tech}</p>
+                                        <p key={index} className="text-[4vw] md:text-[1.5vw] lg:text-[1vw] lg:tracking-normal px-[3vw] py-[2vw] lg:px-[1.2vw] lg:py-[0.5vw] rounded-full border border-foreground/70 font-medium flex justify-center items-center">{tech}</p>
                                     ))}
                                 </div>
                             </div>

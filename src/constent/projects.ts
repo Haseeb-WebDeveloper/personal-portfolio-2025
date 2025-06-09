@@ -60,7 +60,7 @@ export const heroProjects: IHeroProjects[] = [
         ],
         techStack: ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS", "Shadcn/UI", "WebGL", "GSAP", "Figma", "Notion"],
         moreInfo: [
-            `<p>I helped <span class="lg:font-semibold font-medium tracking-wide">Figmenta</span> to rebuild their website from scratch. They were having a lot of issues with old website related to <span class="lg:font-semibold font-medium tracking-wide">CMS and performance</span>. I was able to help them with the development of the website and the integration of the Sanity CMS. I build them <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[1vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">5 different websites</span> for their different departments.</p>`,
+            `<p>I helped <span class="lg:font-semibold font-medium tracking-wide">Figmenta</span> to rebuild their website from scratch. They were having a lot of issues with old website related to <span class="lg:font-semibold font-medium tracking-wide">CMS and performance</span>. I was able to help them with the development of the website and the integration of the Sanity CMS. I build them <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[0.8vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">5 different websites</span> for their different departments.</p>`,
         ],
         testimonialColor: "#13001A",
         testimonial: [
@@ -87,7 +87,7 @@ export const heroProjects: IHeroProjects[] = [
     //     ],
     //     techStack: ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS", "Shadcn/UI", "WebGL", "GSAP", "Figma", "Upwork"],
     //     moreInfo: [
-    //         `<p>My journey with <span class="lg:font-semibold font-medium tracking-wide">Enzig Studio</span> started when they trusted me with building their cricket team website, <span class="font-medium">India Masters</span>. They loved the outcome and soon reached out again, this time to design and develop their <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[1vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">full agency website.</span> It was a big project with over 25 unique pages, modern, high-performance stack.</p>`
+    //         `<p>My journey with <span class="lg:font-semibold font-medium tracking-wide">Enzig Studio</span> started when they trusted me with building their cricket team website, <span class="font-medium">India Masters</span>. They loved the outcome and soon reached out again, this time to design and develop their <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[0.8vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">full agency website.</span> It was a big project with over 25 unique pages, modern, high-performance stack.</p>`
     //     ],
     //     testimonialColor: "#738a20",
     //     testimonial: [
@@ -114,7 +114,7 @@ export const heroProjects: IHeroProjects[] = [
         ],
         techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "GSAP", "Brevo", "Upwork"],
         moreInfo: [
-            `<p>Sho is a entrepreneur and he reached out after seeing my past work, and we quickly clicked on the vision for <span class="lg:font-semibold font-medium tracking-wide">Shoelite</span>. I helped him turn his ideas into a smooth, high-performing website that reflects his brand and mission perfectly. This website helped him to get <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[1vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">100+ students</span> in just 2 months.</p>`
+            `<p>Sho is a entrepreneur and he reached out after seeing my past work, and we quickly clicked on the vision for <span class="lg:font-semibold font-medium tracking-wide">Shoelite</span>. I helped him turn his ideas into a smooth, high-performing website that reflects his brand and mission perfectly. This website helped him to get <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[0.8vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">100+ students</span> in just 2 months.</p>`
         ],
         testimonialColor: "#5B4533",
         testimonial: [
@@ -141,12 +141,12 @@ export const heroProjects: IHeroProjects[] = [
         ],
         techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "GSAP", "Brevo", "Sanity CMS"],
         moreInfo: [
-            `<p>The goal was simple, build a <span class="lg:font-semibold font-medium tracking-wide">high converting</span> landing page that communicates trust and makes it easy for businesses to understand the value of <span class="lg:font-semibold font-medium tracking-wide">AI driven reviews</span>. I focused on clean and modern design. The result? within 1 months, the website was able to get <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[1vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">20+ clients.</span></p>`
+            `<p>The goal was simple, build a <span class="lg:font-semibold font-medium tracking-wide">high converting</span> landing page that communicates trust and makes it easy for businesses to understand the value of <span class="lg:font-semibold font-medium tracking-wide">AI driven reviews</span>. I focused on clean and modern design. The result? within 1 months, the website was able to get <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[0.8vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">20+ clients.</span></p>`
         ],
         testimonialColor: "#1A1550",
         testimonial: [
             {
-                name: "Rajesh",
+                name: "Wasif Ali Khan",
                 role: "Founder & CEO of Rateourjob",
                 feedback: "I was worried about how to present our AI review system in a way that wouldn't overwhelm potential clients. He just... got it. Within a month of launching the site he built, we had 20+ new clients! The site isn't just pretty - it actually converts. Couldn't be happier with the results.",
                 rating: 5,
@@ -168,7 +168,7 @@ export const heroProjects: IHeroProjects[] = [
         ],
         techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "GSAP", "Node", "Express", "MongoDB", "Clerk", "Diffrent APIs"],
         moreInfo: [
-            `<p>Fuzzie Automation was built to make life easier for teams juggling multiple platforms. I worked on creating a smooth, unified dashboard where users can connect their Google Drive, Slack, Notion, and Discord and <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[1vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">automate routine tasks with just a few clicks.</span> The goal was to reduce the daily back-and-forth and bring everything under one roof. Simple, clean, and super handy for productivity.</p>`
+            `<p>Fuzzie Automation was built to make life easier for teams juggling multiple platforms. I worked on creating a smooth, unified dashboard where users can connect their Google Drive, Slack, Notion, and Discord and <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[0.8vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">automate routine tasks with just a few clicks.</span> The goal was to reduce the daily back-and-forth and bring everything under one roof. Simple, clean, and super handy for productivity.</p>`
         ],
         testimonialColor: "#0A0F1D",
         testimonial: [
@@ -178,7 +178,7 @@ export const heroProjects: IHeroProjects[] = [
                 feedback: "This was actually my first dive into building a full-stack automation platform. I wanted to solve a real problem - the hassle of switching between different tools all day. While it's not deployed yet, building this taught me so much about integrating different APIs and creating a unified dashboard. Check out the code if you're curious!",
                 rating: 5,
                 image: "/avator/haseeb-ahmed-raza-khan.webp",
-                link: "https://github.com/Haseeb-WebDeveloper/Fuzzie-Automation-Software",
+                link: "github.com/Haseeb-WebDeveloper/Fuzzie-Automation-Software",
             }
         ]
     },
@@ -195,7 +195,7 @@ export const heroProjects: IHeroProjects[] = [
         ],
         techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "GSAP", "Node", "Express", "MongoDB", "AI APIs"],
         moreInfo: [
-            `<p>This was my brother's idea. He is a student and he wanted to build a platform where he can get AI-powered grading and feedback for his assignments. After 1 month I build a multi tenant platform where univercities or teachers can create their subdomain and get <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[1vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">AI-powered grading and feedback.</span></p>`
+            `<p>This was my brother's idea. He is a student and he wanted to build a platform where he can get AI-powered grading and feedback for his assignments. After 1 month I build a multi tenant platform where univercities or teachers can create their subdomain and get <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[0.8vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">AI-powered grading and feedback.</span></p>`
         ],
         testimonialColor: "#033358",
         testimonial: [

@@ -37,7 +37,7 @@ export default function ProjectImageCarousel({ images, title, category }: { imag
                 {images.length > 1 && images.map((_, index) => (
                     <div
                         key={index}
-                        className={`h-[0.3vw] w-[2vw] rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-primary' : 'bg-foreground/70'
+                        className={`lg:h-[0.3vw] lg:w-[2vw] md:h-[0.5vw] md:w-[3vw] h-[0.8vw] w-[4vw] rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-primary' : 'bg-foreground/70'
                             }`}
                     />
                 ))}

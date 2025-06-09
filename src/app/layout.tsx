@@ -9,6 +9,7 @@ import Navbar from "@/components/layout.tsx/navbar";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import AnnouncementStrip from "@/components/AnnouncementStrip";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -158,6 +159,7 @@ export default function RootLayout({
             <Analytics />
             <SpeedInsights />
             <SmoothScrolling>
+              <AnnouncementStrip />
               <Navbar />
               {children}
               <Footer />

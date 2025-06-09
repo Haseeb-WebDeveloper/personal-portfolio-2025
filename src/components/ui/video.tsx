@@ -307,7 +307,7 @@ export default function HomeVideo() {
     return (
         <div
             ref={containerRef}
-            className="absolute opacity-0 z-[15] top-[55vh] lg:top-[35vw] left-1/2 -translate-x-1/2 w-full h-fit md:max-w-[70vw] max-w-[90vw] md:cursor-none cursor-pointer group overflow-hidden"
+            className="absolute opacity-0 z-[15] top-[57dvh] mt-[2vw] md:top-[25dvh] lg:top-[35vw] left-1/2 -translate-x-1/2 w-full h-fit md:max-w-[70vw] max-w-[90vw] md:cursor-none cursor-pointer group overflow-hidden"
             id="video-container"
             style={{
                 cursor: isNearBottom ? 'default' : undefined
@@ -336,7 +336,7 @@ export default function HomeVideo() {
             {/* Video element */}
             <video
                 ref={videoRef}
-                className="w-full h-full max-h-[60vh] md:max-h-full object-cover aspect-video rounded-2xl"
+                className="w-full h-full max-h-[60dvh] mt-[2vw] md:max-h-full object-cover aspect-video rounded-2xl"
                 onClick={handleVideoClick}
                 loop
                 muted={true} // Always start muted
