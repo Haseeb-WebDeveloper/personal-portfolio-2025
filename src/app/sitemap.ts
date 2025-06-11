@@ -44,5 +44,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 `${baseUrl}/wasif-khan.png`,
             ]
         },
+        {
+            url: `${baseUrl}/contact`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
+        },
     ]
 }
