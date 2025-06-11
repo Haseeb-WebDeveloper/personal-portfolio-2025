@@ -40,11 +40,11 @@ export const metadata: Metadata = {
         images: ["Haseeb-Ahmed-Raza-Khan-Projects-OpenGrah-Image.png"],
     },
     robots: {
-        index: false,
-        follow: false,
+        index: true,
+        follow: true,
         googleBot: {
-            index: false,
-            follow: false,
+            index: true,
+            follow: true,
             'max-video-preview': -1,
             'max-image-preview': 'large',
             'max-snippet': -1,
