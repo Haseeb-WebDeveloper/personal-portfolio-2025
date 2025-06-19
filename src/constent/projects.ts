@@ -43,19 +43,19 @@ export const heroProjects: IHeroProjects[] = [
         projectImages: [
             {
                 url: "https://figmenta.com",
-                image: "/projects/figmenta-live.webp",
+                image: "/projects/new-figmenta.webp",
             },
             {
                 url: "https://studio.figmenta.com",
-                image: "/projects/figmenta-studio.webp",
+                image: "/projects/new-studio.webp",
             },
             {
                 url: "https://live.figmenta.com",
-                image: "/projects/figmenta-live.webp",
+                image: "/projects/new-live.webp",
             },
             {
                 url: "https://production.figmenta.com",
-                image: "/projects/figmenta-studio.webp",
+                image: "/projects/new-productions.webp",
             },
         ],
         techStack: ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS", "Shadcn/UI", "WebGL", "GSAP", "Figma", "Notion"],
@@ -223,19 +223,19 @@ export const projects: IProjects[] = [
         projectImages: [
             {
                 url: "https://figmenta.com",
-                image: "/projects/figmenta-live.webp",
+                image: "/projects/new-figmenta.webp",
             },
             {
                 url: "https://studio.figmenta.com",
-                image: "/projects/figmenta-studio.webp",
+                image: "/projects/new-studio.webp",
             },
             {
                 url: "https://live.figmenta.com",
-                image: "/projects/figmenta-live.webp",
+                image: "/projects/new-live.webp",
             },
             {
                 url: "https://production.figmenta.com",
-                image: "/projects/figmenta-studio.webp",
+                image: "/projects/new-productions.webp",
             },
         ],
         techStack: ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS", "Shadcn/UI", "WebGL", "GSAP", "Figma", "Notion"],

@@ -76,7 +76,7 @@ export default function CTALarge() {
         <>
             <section
                 ref={sectionRef}
-                className="flex w-full lg:h-[30vw] md:h-[40vw] h-[50vw] items-center overflow-hidden"
+                className="flex w-full h-[30vw] items-center overflow-hidden"
             >
                 <div
                     ref={textRef}
