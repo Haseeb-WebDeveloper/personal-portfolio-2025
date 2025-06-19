@@ -159,7 +159,7 @@ export default function RootLayout({
             <Analytics />
             <SpeedInsights />
             <SmoothScrolling>
-              <AnnouncementStrip />
+              {/* <AnnouncementStrip /> */}
               <Navbar />
               {children}
               <Footer />
