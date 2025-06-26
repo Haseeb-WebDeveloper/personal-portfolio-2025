@@ -1,6 +1,6 @@
 import { projects } from "@/constent/projects";
 import ProjectsList from "@/components/projects/projects-list";
-import CTASection from "@/components/cta-section";
+// import CTASection from "@/components/cta-section";
 import CTALarge from "@/components/ui/cta-large";
 import CTAMobile from "@/components/ui/cta-mobile";
 

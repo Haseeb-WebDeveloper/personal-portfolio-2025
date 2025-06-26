@@ -140,11 +140,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/haseeb-logo.webp" sizes="any" />
+        {/* Google Analytics - gtag.js */}
         <Script
-          src="https://api.cronbot.ai/v1/widgets/app/app_ms1c995bmr1f"
+          src="https://www.googletagmanager.com/gtag/js?id=G-TRW2R6DCCB"
           strategy="afterInteractive"
+          async
         />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TRW2R6DCCB');
+          `}
+        </Script>
       </head>
       <body
         className={`${trap.variable} ${dmSans.variable} font-sans antialiased`}
