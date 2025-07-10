@@ -16,7 +16,7 @@ export default function ProjectImageCarousel({ images, title, category }: { imag
     }, [images.length]);
 
     return (
-        <Link href={images[currentIndex].url} target="_blank" rel="noopener noreferrer" className="relative w-full">
+        <Link href={images[currentIndex].url} target="_blank" rel="noopener noreferrer" className="relative w-full h-full">
             <Image
                 src={images[currentIndex].image}
                 alt={title}
@@ -24,6 +24,7 @@ export default function ProjectImageCarousel({ images, title, category }: { imag
                 width={1000}
                 height={1000}
                 placeholder="blur"
+                sizes='100vw'
                 blurDataURL={images[currentIndex].image}
                 quality={100}
             />

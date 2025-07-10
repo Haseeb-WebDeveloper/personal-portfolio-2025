@@ -13,10 +13,10 @@ export default function Home() {
       <div className="mt-[8vw] mb-[4vw]">
         <TechStack />
       </div>
-      <div className="mt-[10vw] mb-[8vw] hidden lg:block">
+      {/* <div className="mt-[10vw] mb-[8vw] hidden lg:block">
         <CTALarge />
-      </div>
-      <div className="mt-[15vw] mb-[24vw] lg:hidden">
+      </div> */}
+      <div className="mt-[15vw] md:mt-[10vw] md:mb-[10vw] mb-[24vw] ">
         <CTAMobile />
       </div>
     </>

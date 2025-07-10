@@ -14,9 +14,12 @@ export default function TechStack() {
         "Nodejs",
         "Express",
         "MongoDB",
+        "PostgreSQL",
+        "Supabase",
+        "Neon",
+        "Prisma",
         "Notion",
         "Discord",
-        "Google Meet",
         "Figma",
         "Shadcn/UI",
         "GSAP",
@@ -30,7 +33,6 @@ export default function TechStack() {
         "Netlify",
         "GitHub",
         "Sanity",
-        "Firebase",
     ];
 
 
@@ -43,7 +45,14 @@ export default function TechStack() {
         "Figma",
         "WordPress",
         "Framer Motion",
-        "GSAP"
+        "GSAP",
+        "Supabase",
+        "JavaScript",
+        "Prisma",
+        "Sanity",
+        "Prisma",
+        "OpenAI API",
+        "PostgreSQL",
     ];
 
     useEffect(() => {

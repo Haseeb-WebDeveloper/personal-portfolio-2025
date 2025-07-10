@@ -15,10 +15,10 @@ export default async function Works() {
                 <ProjectsList projects={projects} />
             </div>
 
-            <div className="mt-[10vw] mb-[8vw] hidden lg:block">
+            {/* <div className="mt-[10vw] mb-[8vw] hidden lg:block">
                 <CTALarge />
-            </div>
-            <div className="mt-[24vw] mb-[20vw] lg:hidden">
+            </div> */}
+            <div className="mt-[24vw] md:mt-[16vw] md:mb-[10vw] mb-[20vw]">
                 <CTAMobile />
             </div>
         </>
