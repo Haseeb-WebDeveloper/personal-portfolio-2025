@@ -169,7 +169,7 @@ export default function Form({ handleFormOpen }: { handleFormOpen: () => void })
 
         setIsSubmitting(true)
         try {
-            const response = await fetch('/api/send-email', {
+            const response = await fetch('/api/send-contact-form', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -94,7 +94,7 @@ const GSAPCardsAnimation = () => {
                 className="relative h-[400vh]"
             >
                 <div
-                    className={`bg-red-500 sticky top-0 h-screen flex items-center justify-center overflow-hidden ${sectionInView ? 'z-10' : ''}`}
+                    className={`sticky top-0 h-screen flex items-center justify-center overflow-hidden ${sectionInView ? 'z-10' : ''}`}
                 >
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-8 relative z-20">
                         {cardsData.map((card, index) => (

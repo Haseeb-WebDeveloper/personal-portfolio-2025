@@ -10,6 +10,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import AnnouncementStrip from "@/components/AnnouncementStrip";
+import Chatbot from "@/components/chatbot";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -172,6 +173,7 @@ export default function RootLayout({
               <Navbar />
               {children}
               <Footer />
+              <Chatbot />
             </SmoothScrolling>
           </main>
         </ThemeProvider>
