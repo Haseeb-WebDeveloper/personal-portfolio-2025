@@ -17,7 +17,7 @@ const vectorStore = new SupabaseVectorStore(embeddings, {
 });
 
 export const databaseTool = tool({
-    description: `Tool for searching specific information about Haseeb in the knowledge base. If user ask anyting that you don't know then use this tool`,
+    description: `Tool for searching specific information about Haseeb (like his contact info, skills, experience, projects, pricing, his life journey, etc.) in the knowledge base. If user ask anyting that you don't know then use this tool`,
     parameters: z.object({
         query: z.string().describe('The specific information about Haseeb you need to find. Make your query clear and focused.'),
     }),

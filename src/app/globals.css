@@ -135,8 +135,7 @@ body {
 .dm-sans {
   font-family: var(--font-dm-sans);
 }
-
-/* hide scrollbar */
+/* Global scrollbar styles */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -176,6 +175,42 @@ body {
 .chatbot-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: hsl(var(--muted-foreground) / 0.4) transparent;
+}
+
+/* Ensure chatbot dialog doesn't interfere with other elements */
+[data-slot="dialog-overlay"] {
+  backdrop-filter: blur(2px);
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  /* Prevent iOS Safari from adding extra padding */
+  .chatbot-dialog {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  /* Ensure chatbot doesn't interfere with mobile navigation */
+  .chatbot-dialog[data-state="open"] ~ * {
+    pointer-events: none;
+  }
+  
+  .chatbot-dialog[data-state="open"] {
+    pointer-events: auto;
+  }
+}
+
+/* Desktop-specific: don't block sidebar interaction */
+@media (min-width: 769px) {
+  /* Make sure desktop sidebar remains interactive */
+  .chatbot-dialog[data-state="open"] ~ * {
+    pointer-events: auto;
+  }
+  
+  /* Reduce backdrop blur on desktop to keep sidebar visible */
+  [data-slot="dialog-overlay"] {
+    backdrop-filter: blur(1px);
+    background: rgba(0, 0, 0, 0.2);
+  }
 }
 
 .section {
