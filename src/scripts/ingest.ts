@@ -12,7 +12,7 @@ async function main() {
     await supabaseClient.from('documents').delete().neq('id', 0);  //default all rows where id is not 0
 
     // 1‑A. Read .md files
-    const dataDir = "src/data/knowledge";    
+    const dataDir = "src/knowledge";    
     const files = await fs.readdir(dataDir);  //read all files in the dataDir
     const mdFiles = files.filter(f => f.endsWith(".md"));
 

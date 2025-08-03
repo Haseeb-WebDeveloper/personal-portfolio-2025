@@ -42,13 +42,13 @@ function Navbar() {
                 <div className='flex items-center gap-[1.5vw] lg:gap-[0.5vw]'>
                     <Link
                         href="/projects"
-                        className="hidden cursor-pointer relative md:flex items-center text-[3.5vw] md:text-[3vw] lg:text-[1.11vw] font-medium h-[8vw] md:h-[4vw] lg:h-[3.56vw] px-[2vw] lg:px-[1vw] border border-foreground/20 rounded-full leading-none"
+                        className="hidden cursor-pointer relative md:flex items-center text-[3.5vw] md:text-[3vw] lg:text-[1.11vw] font-medium h-[8vw] md:h-[4vw] lg:h-[3.56vw] px-[4vw] lg:px-[2vw] border border-foreground/20 rounded-full leading-none"
                     >
                         Projects
                     </Link>
                     <button
                         onClick={handleFormOpen}
-                        className="cursor-pointer relative flex items-center text-[5vw] md:text-[3vw] lg:text-[1.11vw] font-medium h-[12vw] md:h-[4vw] lg:h-[3.56vw] px-[4vw] lg:px-[1vw] border border-foreground/40 rounded-full leading-none"
+                        className="cursor-pointer relative flex items-center text-[5vw] md:text-[3vw] lg:text-[1.11vw] font-medium h-[12vw] md:h-[4vw] lg:h-[3.56vw] px-[4vw] lg:px-[2vw] border border-foreground/40 rounded-full leading-none"
                     >
                         Contact
                     </button>

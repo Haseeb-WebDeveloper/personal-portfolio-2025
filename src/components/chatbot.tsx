@@ -126,7 +126,7 @@ export default function Chatbot() {
       };
       return toolDisplayNames[currentTool] || `Using ${currentTool}...`;
     }
-    return 'Typing...';
+    return 'Thinking...';
   };
 
   // Filter out tool call messages and empty messages to prevent duplicates
@@ -166,7 +166,7 @@ export default function Chatbot() {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent 
           ref={dialogRef}
-          className="fixed inset-0 md:right-4 md:bottom-4 md:top-4 md:left-auto w-full md:w-96 lg:w-[450px] p-0 flex flex-col transform-none translate-x-0 translate-y-0 max-w-none rounded-none md:border md:rounded-xl shadow-none focus:outline-none"
+          className="fixed inset-0 md:right-4 md:bottom-4 md:top-4 md:left-auto w-full md:w-96 lg:min-w-[20vw] max-h-[900px] p-0 flex flex-col transform-none translate-x-0 translate-y-0 max-w-none rounded-none md:border md:rounded-xl shadow-none focus:outline-none"
           style={{
             height: isMobile ? '100vh' : 'calc(100vh-2rem)',
             minHeight: isMobile ? '100vh' : 'calc(100vh-2rem)',
