@@ -178,7 +178,7 @@ export default function RootLayout({
               <Navbar />
               {children}
               <Footer />
-              {/* <Chatbot /> */}
+              <Chatbot />
             </SmoothScrolling>
           </main>
         </ThemeProvider>

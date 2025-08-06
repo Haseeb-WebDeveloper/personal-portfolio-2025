@@ -3,11 +3,12 @@ import { z } from 'zod';
 import { SupabaseVectorStore } from '@langchain/community/vectorstores/supabase';
 import { OllamaEmbeddings } from '@langchain/ollama';
 import { supabaseClient } from '@/lib/supabase';
+import { OpenAIEmbeddings } from '@langchain/openai';
 
 /* ---------- Vector store setup ------------------------------------ */
-const embeddings = new OllamaEmbeddings({
-    model: 'bge-m3',                     
-    baseUrl: 'http://localhost:11434',
+const embeddings = new OpenAIEmbeddings({
+    model: 'text-embedding-3-small',                     
+    apiKey: process.env.OPENAI_API_KEY,
 });
 
 const vectorStore = new SupabaseVectorStore(embeddings, {

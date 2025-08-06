@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { MarkdownTextSplitter, RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
-// import { OpenAIEmbeddings } from "@langchain/openai";
+import { OpenAIEmbeddings } from "@langchain/openai";
 import { OllamaEmbeddings } from "@langchain/ollama";
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
 import { supabaseClient } from "@/lib/supabase";
@@ -53,8 +53,9 @@ async function main() {
     }
 
     // 1‑D. Embed + store in Supabase
-    const embeddings = new OllamaEmbeddings({
-        model: "bge-m3",
+    const embeddings = new OpenAIEmbeddings({
+        model: "text-embedding-3-small",
+        apiKey: process.env.OPENAI_API_KEY,
     });
 
     console.log(`Embedding ${docs.length} documents...`);
