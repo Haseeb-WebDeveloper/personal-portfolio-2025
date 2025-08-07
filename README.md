@@ -33,4 +33,31 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
+### Required Environment Variables
+
+Before deploying, make sure to set these environment variables in your Vercel project:
+
+```bash
+# Email Service Configuration (Brevo/Sendinblue)
+BREVO_USER=your_brevo_username
+BREVO_PASSWORD=your_brevo_password
+FROM_EMAIL=your_from_email@domain.com
+TO_EMAIL=your_to_email@domain.com
+
+# OpenAI Configuration
+OPENAI_API_KEY=your_openai_api_key
+
+# Supabase Configuration (if using vector store)
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+```
+
+### Deployment Steps
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add the environment variables in Vercel dashboard
+4. Deploy
+
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

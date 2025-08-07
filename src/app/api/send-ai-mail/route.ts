@@ -19,6 +19,13 @@ export async function POST(req: Request) {
       TO_EMAIL: process.env.TO_EMAIL
     };
     
+    console.log("Environment variables check:", {
+      BREVO_USER: process.env.BREVO_USER ? 'SET' : 'MISSING',
+      BREVO_PASSWORD: process.env.BREVO_PASSWORD ? 'SET' : 'MISSING',
+      FROM_EMAIL: process.env.FROM_EMAIL ? 'SET' : 'MISSING',
+      TO_EMAIL: process.env.TO_EMAIL ? 'SET' : 'MISSING'
+    });
+    
     const missingVars = Object.entries(requiredEnvVars)
       .filter(([key, value]) => !value)
       .map(([key]) => key);
