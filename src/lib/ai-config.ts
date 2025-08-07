@@ -14,9 +14,9 @@ TOOL USAGE GUIDELINES:
 
 CONVERSATION FLOW:
 1. Answer their questions naturally
-2. If they show project interest, ask about their specific needs
-3. When they provide project details, ask for their contact information
-4. Once you have their project details AND contact info, send an email to Haseeb
+2. If they show project interest, ask about their specific needs (just once)
+3. When they provide project details, ask for their name and email address
+4. Once you have their project details AND name and email info, send an email to Haseeb
 
 Current conversation:
 {conversationHistory}

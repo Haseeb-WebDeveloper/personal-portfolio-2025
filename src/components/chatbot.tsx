@@ -1,20 +1,19 @@
 "use client";
 
 import { useChat } from "@ai-sdk/react";
-import { MessageCircle, X, Bot, User } from "lucide-react";
+import { X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import {
-  AIConversation,
-  AIConversationContent,
-  AIConversationScrollButton,
-} from "@/components/ui/kibo-ui/ai/conversation";
+// import {
+//   AIConversation,
+//   AIConversationContent,
+//   AIConversationScrollButton,
+// } from "@/components/ui/kibo-ui/ai/conversation";
 import {
   AIMessage,
   AIMessageContent,
@@ -27,16 +26,15 @@ import {
 } from "@/components/ui/kibo-ui/ai/input";
 import { AIResponse } from "@/components/ui/kibo-ui/ai/response";
 import Image from "next/image";
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from "react-responsive";
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const [currentTool, setCurrentTool] = useState<string | null>(null);
 
-  const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   const { messages, input, handleInputChange, handleSubmit, isLoading, error } =
     useChat({
@@ -65,36 +63,38 @@ export default function Chatbot() {
     if (isOpen) {
       // Only prevent body scroll on mobile, not desktop
       if (isMobile) {
-        document.body.style.overflow = 'hidden';
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
-        document.body.style.height = '100%';
+        document.body.style.overflow = "hidden";
+        document.body.style.position = "fixed";
+        document.body.style.width = "100%";
+        document.body.style.height = "100%";
       }
-      
+
       // Force layout recalculation
       if (dialogRef.current) {
-        dialogRef.current.style.height = isMobile ? window.innerHeight + 'px' : 'calc(100vh - 2rem)';
+        dialogRef.current.style.height = isMobile
+          ? window.innerHeight + "px"
+          : "calc(100vh - 2rem)";
       }
 
       // Handle orientation change
       const handleResize = () => {
         if (dialogRef.current && isMobile) {
-          dialogRef.current.style.height = window.innerHeight + 'px';
+          dialogRef.current.style.height = window.innerHeight + "px";
         }
       };
 
-      window.addEventListener('resize', handleResize);
-      window.addEventListener('orientationchange', handleResize);
+      window.addEventListener("resize", handleResize);
+      window.addEventListener("orientationchange", handleResize);
 
       return () => {
         if (isMobile) {
-          document.body.style.overflow = '';
-          document.body.style.position = '';
-          document.body.style.width = '';
-          document.body.style.height = '';
+          document.body.style.overflow = "";
+          document.body.style.position = "";
+          document.body.style.width = "";
+          document.body.style.height = "";
         }
-        window.removeEventListener('resize', handleResize);
-        window.removeEventListener('orientationchange', handleResize);
+        window.removeEventListener("resize", handleResize);
+        window.removeEventListener("orientationchange", handleResize);
       };
     }
   }, [isOpen, isMobile]);
@@ -119,28 +119,26 @@ export default function Chatbot() {
   const getLoadingText = () => {
     if (currentTool) {
       const toolDisplayNames: { [key: string]: string } = {
-        'search_knowledge_base': 'Searching knowledge base...',
-        'send_mail': 'Sending email...',
-        'database': 'Searching database...',
-        'send-mail': 'Sending email...'
+        search_knowledge_base: "Searching...",
+        send_mail: "Sending email...",
       };
       return toolDisplayNames[currentTool] || `Using ${currentTool}...`;
     }
-    return 'Thinking...';
+    return "Typing...";
   };
 
   // Filter out tool call messages and empty messages to prevent duplicates
-  const filteredMessages = messages.filter(message => {
+  const filteredMessages = messages.filter((message) => {
     // Keep user messages
-    if (message.role === 'user') return true;
-    
+    if (message.role === "user") return true;
+
     // For assistant messages, only keep non-empty text messages
-    if (message.role === 'assistant') {
-      return message.parts.some(part => 
-        part.type === 'text' && part.text.trim().length > 0
+    if (message.role === "assistant") {
+      return message.parts.some(
+        (part) => part.type === "text" && part.text.trim().length > 0
       );
     }
-    
+
     return true;
   });
 
@@ -150,7 +148,7 @@ export default function Chatbot() {
       <Button
         onClick={() => setIsOpen(true)}
         className="cursor-pointer fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full bg-foreground hover:bg-foreground"
-        style={{ touchAction: 'manipulation' }}
+        style={{ touchAction: "manipulation" }}
       >
         <Image
           src="/chat-bot.png"
@@ -164,14 +162,14 @@ export default function Chatbot() {
 
       {/* Chat Dialog */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent 
+        <DialogContent
           ref={dialogRef}
           className="fixed inset-0 md:right-4 md:bottom-4 md:top-4 md:left-auto w-full md:w-96 lg:min-w-[20vw] max-h-[900px] p-0 flex flex-col transform-none translate-x-0 translate-y-0 max-w-none rounded-none md:border md:rounded-xl shadow-none focus:outline-none"
           style={{
-            height: isMobile ? '100vh' : 'calc(100vh-2rem)',
-            minHeight: isMobile ? '100vh' : 'calc(100vh-2rem)',
-            maxHeight: isMobile ? '100vh' : 'calc(100vh-2rem)',
-            touchAction: 'manipulation'
+            height: isMobile ? "100vh" : "calc(100vh-2rem)",
+            minHeight: isMobile ? "100vh" : "calc(100vh-2rem)",
+            maxHeight: isMobile ? "100vh" : "calc(100vh-2rem)",
+            touchAction: "manipulation",
           }}
         >
           {/* Header */}
@@ -202,7 +200,7 @@ export default function Chatbot() {
                 size="icon"
                 onClick={() => setIsOpen(false)}
                 className="h-8 w-8"
-                style={{ touchAction: 'manipulation' }}
+                style={{ touchAction: "manipulation" }}
               >
                 <X className="h-4 w-4" />
               </Button>
@@ -211,13 +209,8 @@ export default function Chatbot() {
 
           {/* Messages Area */}
           <div
-            ref={scrollContainerRef}
-            className="flex-1 overflow-y-auto chatbot-scrollbar"
-            style={{ 
-              WebkitOverflowScrolling: 'touch',
-              touchAction: 'pan-y',
-              overscrollBehavior: 'contain'
-            }}
+            data-lenis-prevent
+            className="chatBot-scroll flex-1 overflow-y-auto"
           >
             <div className="p-4 space-y-4 min-h-full">
               {filteredMessages.length === 0 ? (
@@ -241,23 +234,28 @@ export default function Chatbot() {
                           switch (part.type) {
                             case "text":
                               // Check if this is the last assistant message and is loading
-                              const isLastAssistantMessage = 
-                                message.role === "assistant" && 
+                              const isLastAssistantMessage =
+                                message.role === "assistant" &&
                                 messageIndex === filteredMessages.length - 1;
-                              
-                              const shouldShowLoadingIndicator = 
-                                isLastAssistantMessage && 
-                                isLoading && 
+
+                              const shouldShowLoadingIndicator =
+                                isLastAssistantMessage &&
+                                isLoading &&
                                 i === message.parts.length - 1;
 
                               return shouldShowLoadingIndicator ? (
-                                <div key={`${message.id}-${i}`} className="flex items-center gap-2">
+                                <div
+                                  key={`${message.id}-${i}`}
+                                  className="flex items-center gap-2"
+                                >
                                   <div className="flex space-x-1">
                                     <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce" />
                                     <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce [animation-delay:0.1s]" />
                                     <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce [animation-delay:0.2s]" />
                                   </div>
-                                  <span className="text-sm text-muted-foreground">{getLoadingText()}</span>
+                                  <span className="text-sm text-muted-foreground">
+                                    {getLoadingText()}
+                                  </span>
                                 </div>
                               ) : (
                                 <AIResponse key={`${message.id}-${i}`}>
@@ -275,21 +273,26 @@ export default function Chatbot() {
               )}
 
               {/* Show loading only if no messages or if the last message isn't from assistant */}
-              {isLoading && (filteredMessages.length === 0 || filteredMessages[filteredMessages.length - 1]?.role !== "assistant") && (
-                <AIMessage from="assistant">
-                  <AIMessageAvatar src="" name="AI" />
-                  <AIMessageContent>
-                    <div className="flex items-center gap-2">
-                      <div className="flex space-x-1">
-                        <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce" />
-                        <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce [animation-delay:0.1s]" />
-                        <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce [animation-delay:0.2s]" />
+              {isLoading &&
+                (filteredMessages.length === 0 ||
+                  filteredMessages[filteredMessages.length - 1]?.role !==
+                    "assistant") && (
+                  <AIMessage from="assistant">
+                    <AIMessageAvatar src="" name="AI" />
+                    <AIMessageContent>
+                      <div className="flex items-center gap-2">
+                        <div className="flex space-x-1">
+                          <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce" />
+                          <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce [animation-delay:0.1s]" />
+                          <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce [animation-delay:0.2s]" />
+                        </div>
+                        <span className="text-sm text-muted-foreground">
+                          {getLoadingText()}
+                        </span>
                       </div>
-                      <span className="text-sm text-muted-foreground">{getLoadingText()}</span>
-                    </div>
-                  </AIMessageContent>
-                </AIMessage>
-              )}
+                    </AIMessageContent>
+                  </AIMessage>
+                )}
 
               {/* Error Message */}
               {error && (
@@ -309,9 +312,9 @@ export default function Chatbot() {
           </div>
 
           {/* Input Form */}
-          <div 
+          <div
             className="bg-background border-t p-4 flex-shrink-0"
-            style={{ touchAction: 'manipulation' }}
+            style={{ touchAction: "manipulation" }}
           >
             <AIInput onSubmit={onSubmit} className="">
               <AIInputTextarea
@@ -320,13 +323,13 @@ export default function Chatbot() {
                 onKeyDown={handleKeyDown}
                 placeholder="Type your message..."
                 disabled={isLoading}
-                style={{ touchAction: 'manipulation' }}
+                style={{ touchAction: "manipulation" }}
               />
               <div className="p-2 w-full flex justify-end">
                 <AIInputSubmit
                   status={isLoading ? "submitted" : "ready"}
                   disabled={isLoading || !input.trim()}
-                  style={{ touchAction: 'manipulation' }}
+                  style={{ touchAction: "manipulation" }}
                 />
               </div>
             </AIInput>

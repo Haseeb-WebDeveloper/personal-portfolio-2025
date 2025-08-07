@@ -453,3 +453,9 @@ body {
   left: 0;
   z-index: 0;
 }
+
+
+.chatBot-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}

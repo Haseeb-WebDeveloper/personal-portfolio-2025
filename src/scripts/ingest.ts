@@ -1,8 +1,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { MarkdownTextSplitter, RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
+import { MarkdownTextSplitter } from "@langchain/textsplitters";
 import { OpenAIEmbeddings } from "@langchain/openai";
-import { OllamaEmbeddings } from "@langchain/ollama";
+// import { OllamaEmbeddings } from "@langchain/ollama";
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
 import { supabaseClient } from "@/lib/supabase";
 
@@ -25,10 +25,12 @@ async function main() {
       
       // 1-B. Extract metadata from filename
       const category = path.basename(file, ".md").split("-")[0] || "general";
+
+      console.log(`Category: ${category}`);
       
       const splitter = new MarkdownTextSplitter ({
-        chunkSize: 600,
-        chunkOverlap: 80,
+        chunkSize: 1300,
+        chunkOverlap: 200,
       });
 
       // 1-C. Chunk with metadata

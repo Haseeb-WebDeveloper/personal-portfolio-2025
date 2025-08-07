@@ -134,7 +134,7 @@ export const AIReasoningTrigger = memo(
         {children ?? (
           <>
             {isStreaming && duration === 0 ? (
-              <p>Thinking...</p>
+              <p>Typing...</p>
             ) : (
               <p>Thought for {duration} seconds</p>
             )}

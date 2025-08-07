@@ -38,7 +38,7 @@ export const AIMessageContent = ({
     )}
     {...props}
   >
-    <div className="is-user:dark">{children}</div>
+    <div className="is-user:dark text-wrap overflow-x-auto">{children}</div>
   </div>
 );
 
