@@ -9,7 +9,7 @@ export default function HeroSection() {
             {/* hero section */}
             < div className="max-w-[85vw] w-full mx-auto absolute z-[10] top-[40vw] md:top-[18vw] left-1/2 -translate-x-1/2" >
                 <h3 id="text" className="md:max-w-[80vw] w-full mx-auto font-bold leading-[120%] text-[12vw] md:text-[5.5vw] lg:text-[6vw] tracking-tight text-center lg:leading-[130%]">
-                    helping bussinesses build <span className='text-primary'>websites</span> that works
+                    helping business build <span className='text-primary'>websites</span> that works
                 </h3>
             </div >
             < div className="mt-0 md:mt-[18vw] mb-[12vw] h-[90vh] lg:h-[100vh] md:h-[42vw] w-full relative overflow-hidden" >

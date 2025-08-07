@@ -1,4 +1,4 @@
-import HeroSection from "@/components/layout.tsx/hero-section";
+import businessHeroSection from "@/components/layout.tsx/hero-section";
 import HeroProjects from "@/components/projects/hero-projects";
 import TechStack from "@/components/layout.tsx/tech-stack";
 import CTALarge from "@/components/ui/cta-large";
