@@ -80,6 +80,7 @@ export const sendMailTool = tool({
             
             if (error instanceof Error) {
                 console.error('Error message:', error.message);
+                console.log("Error message:", error.message);
                 
                 // Provide more specific user feedback based on error type
                 if (error.message.includes('Missing required environment variables')) {
@@ -90,7 +91,7 @@ export const sendMailTool = tool({
                     userMessage += "Please try again later or reach out through other contact methods.";
                 }
             } else {
-                userMessage += "Please try again later or reach out through other contact methods.";
+                userMessage += "Please try again later or reach out through to him with his email: web.dev.haseeb@gmail.com  Error: " + error;
             }
             
             return userMessage;
