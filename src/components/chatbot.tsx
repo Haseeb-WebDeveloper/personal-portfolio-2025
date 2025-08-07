@@ -173,7 +173,7 @@ export default function Chatbot() {
           }}
         >
           {/* Header */}
-          <div className="bg-background border-b px-4 md:px-6 py-4 flex-shrink-0">
+          <div className="bg-background border-b px-3 py-3 flex-shrink-0">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="bg-foreground w-10 h-10 rounded-full flex items-center justify-center">
@@ -187,10 +187,10 @@ export default function Chatbot() {
                   />
                 </div>
                 <div>
-                  <DialogTitle className="text-lg font-semibold">
+                  <DialogTitle className="text-base font-semibold">
                     AI Assistant
                   </DialogTitle>
-                  <p className="text-sm text-foreground/90">
+                  <p className="text-xs text-foreground/90">
                     Ask me anything about Haseeb
                   </p>
                 </div>
@@ -225,10 +225,10 @@ export default function Chatbot() {
                       from={message.role as "user" | "assistant"}
                       className=""
                     >
-                      <AIMessageAvatar
+                      {/* <AIMessageAvatar
                         src=""
                         name={message.role === "user" ? "Me" : "AI"}
-                      />
+                      /> */}
                       <AIMessageContent>
                         {message.parts.map((part, i) => {
                           switch (part.type) {
@@ -278,13 +278,13 @@ export default function Chatbot() {
                   filteredMessages[filteredMessages.length - 1]?.role !==
                     "assistant") && (
                   <AIMessage from="assistant">
-                    <AIMessageAvatar src="" name="AI" />
+                    {/* <AIMessageAvatar src="" name="AI" /> */}
                     <AIMessageContent>
                       <div className="flex items-center gap-2">
                         <div className="flex space-x-1">
-                          <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce" />
-                          <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce [animation-delay:0.1s]" />
-                          <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce [animation-delay:0.2s]" />
+                          <div className="h-[1px] w-[1px] bg-muted-foreground rounded-full animate-bounce" />
+                          <div className="h-[1px] w-[1px] bg-muted-foreground rounded-full animate-bounce [animation-delay:0.1s]" />
+                          <div className="h-[1px] w-[1px] bg-muted-foreground rounded-full animate-bounce [animation-delay:0.2s]" />
                         </div>
                         <span className="text-sm text-muted-foreground">
                           {getLoadingText()}
@@ -313,7 +313,7 @@ export default function Chatbot() {
 
           {/* Input Form */}
           <div
-            className="bg-background border-t p-4 flex-shrink-0"
+            className="bg-background border-t rounded-t p-1 flex-shrink-0"
             style={{ touchAction: "manipulation" }}
           >
             <AIInput onSubmit={onSubmit} className="">
