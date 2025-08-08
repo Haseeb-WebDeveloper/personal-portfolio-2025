@@ -4,11 +4,7 @@ import { useChat } from "@ai-sdk/react";
 import { X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 // import {
 //   AIConversation,
 //   AIConversationContent,
@@ -119,12 +115,12 @@ export default function Chatbot() {
   const getLoadingText = () => {
     if (currentTool) {
       const toolDisplayNames: { [key: string]: string } = {
-        search_knowledge_base: "Searching...",
-        send_mail: "Sending email...",
+        search_knowledge_base: "Searching",
+        send_mail: "Sending email",
       };
-      return toolDisplayNames[currentTool] || `Using ${currentTool}...`;
+      return toolDisplayNames[currentTool] || `Using ${currentTool}`;
     }
-    return "Typing...";
+    return "Thinking";
   };
 
   // Filter out tool call messages and empty messages to prevent duplicates
@@ -248,14 +244,14 @@ export default function Chatbot() {
                                   key={`${message.id}-${i}`}
                                   className="flex items-center gap-2"
                                 >
-                                  <div className="flex space-x-1">
-                                    <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce" />
-                                    <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce [animation-delay:0.1s]" />
-                                    <div className="h-2 w-2 bg-muted-foreground rounded-full animate-bounce [animation-delay:0.2s]" />
+                                  <div className="flex space-x-1 items-center">
+                                    <span className="text-sm text-muted-foreground">
+                                      {getLoadingText()}
+                                    </span>
+                                    <div className="h-[3px] w-[3px] bg-muted-foreground rounded-full animate-bounce" />
+                                    <div className="h-[3px] w-[3px] bg-muted-foreground rounded-full animate-bounce [animation-delay:0.1s]" />
+                                    <div className="h-[3px] w-[3px] bg-muted-foreground rounded-full animate-bounce [animation-delay:0.2s]" />
                                   </div>
-                                  <span className="text-sm text-muted-foreground">
-                                    {getLoadingText()}
-                                  </span>
                                 </div>
                               ) : (
                                 <AIResponse key={`${message.id}-${i}`}>
@@ -280,15 +276,13 @@ export default function Chatbot() {
                   <AIMessage from="assistant">
                     {/* <AIMessageAvatar src="" name="AI" /> */}
                     <AIMessageContent>
-                      <div className="flex items-center gap-2">
-                        <div className="flex space-x-1">
-                          <div className="h-[1px] w-[1px] bg-muted-foreground rounded-full animate-bounce" />
-                          <div className="h-[1px] w-[1px] bg-muted-foreground rounded-full animate-bounce [animation-delay:0.1s]" />
-                          <div className="h-[1px] w-[1px] bg-muted-foreground rounded-full animate-bounce [animation-delay:0.2s]" />
-                        </div>
+                      <div className="flex space-x-1 items-center">
                         <span className="text-sm text-muted-foreground">
                           {getLoadingText()}
                         </span>
+                        <div className="h-[3px] w-[3px] bg-muted-foreground rounded-full animate-bounce" />
+                        <div className="h-[3px] w-[3px] bg-muted-foreground rounded-full animate-bounce [animation-delay:0.1s]" />
+                        <div className="h-[3px] w-[3px] bg-muted-foreground rounded-full animate-bounce [animation-delay:0.2s]" />
                       </div>
                     </AIMessageContent>
                   </AIMessage>

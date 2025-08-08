@@ -23,24 +23,42 @@ async function main() {
     for (const file of mdFiles) {
       const content = await fs.readFile(path.join(dataDir, file), "utf8");  //read the file
       
-      // 1-B. Extract metadata from filename
-      const category = path.basename(file, ".md").split("-")[0] || "general";
+      // 1-B. Extract metadata from filename with better category mapping
+      const fileName = path.basename(file, ".md");
+      let category = fileName;
+      
+      // Map file names to more descriptive categories
+      const categoryMappings: { [key: string]: string } = {
+        'projects': 'projects',
+        'pricing': 'pricing',
+        'contact': 'contact',
+        'services': 'services',
+        'background': 'background',
+        'work-style': 'work-style',
+        'philosophy': 'philosophy',
+        'personal-info': 'personal-info',
+        'technical-expertise': 'technical-expertise',
+        'professional-summary': 'professional-summary'
+      };
+      
+      category = categoryMappings[fileName] || fileName;
 
-      console.log(`Category: ${category}`);
+      console.log(`Processing file: ${file} with category: ${category}`);
       
       const splitter = new MarkdownTextSplitter ({
-        chunkSize: 1300,
-        chunkOverlap: 200,
+        chunkSize: 2000, // Increased chunk size to preserve complete project information
+        chunkOverlap: 200, // Increased overlap to maintain context
       });
 
-      // 1-C. Chunk with metadata
+      // 1-C. Chunk with enhanced metadata
       const fileChunks = await splitter.createDocuments(
         [content],
         [{ 
           source: file,
           category,
           chunk_type: "markdown",
-          created_at: new Date().toISOString()
+          created_at: new Date().toISOString(),
+          file_name: fileName
         }]
       );
 
@@ -77,10 +95,20 @@ async function main() {
 
     console.log(`Stored ${store} documents in Supabase`);
 
-    // Verify storage by trying to retrieve a document
-    const testQuery = "pricing plans";
-    await store.similaritySearchWithScore(testQuery, 1);
-    console.log(`Retrieved 1 document for "${testQuery}"`);
+    // Test the search with different queries
+    const testQueries = [
+      "projects websites built",
+      "pricing plans cost",
+      "contact information email"
+    ];
+    
+    for (const testQuery of testQueries) {
+      const results = await store.similaritySearchWithScore(testQuery, 2);
+      console.log(`Test query "${testQuery}" returned ${results.length} results`);
+      if (results.length > 0) {
+        console.log(`Top result category: ${results[0][0].metadata.category}`);
+      }
+    }
   } catch (error) {
     console.error("\nError during ingestion:", error);
     process.exit(1);
